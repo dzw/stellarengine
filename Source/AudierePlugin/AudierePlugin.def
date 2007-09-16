@@ -1,0 +1,12 @@
+;  ;
+; #   #  ###  #   #              -= Nuclex Project =-                   ;
+; ##  # #   # ## ## NCXDirectSound8.def - Nuclex DLL export def.s       ;
+; ### # #      ###                                                      ;
+; # ### #      ###  Defines DLL exports for Nuclex                      ;
+; #  ## #   # ## ##                                                     ;
+; #   #  ###  #   # R8             (C)2002 Markus Ewald -> License.txt  ;
+;  ;
+EXPORTS
+  NuclexVersion
+  NuclexRegister
+  NuclexUnregister

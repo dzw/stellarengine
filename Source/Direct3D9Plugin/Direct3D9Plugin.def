@@ -1,0 +1,13 @@
+;  ;
+; #   #  ###  #   #              -= Nuclex Project =-                   ;
+; ##  # #   # ## ## NCXDirect3D9.def - Nuclex DLL export definitions    ;
+; ### # #      ###                                                      ;
+; # ### #      ###  Defines DLL exports for Nuclex                      ;
+; #  ## #   # ## ##                                                     ;
+; #   #  ###  #   # R8             (C)2002 Markus Ewald -> License.txt  ;
+;  ;
+EXPORTS
+  NuclexVersion
+  NuclexRegister
+  NuclexUnregister
+  hInstance

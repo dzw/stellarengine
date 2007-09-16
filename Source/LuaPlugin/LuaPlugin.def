@@ -1,0 +1,12 @@
+;  ;
+; #   #  ###  #   #              -= Nuclex Project =-                   ;
+; ##  # #   # ## ## NuclexLua.def - DLL export definitions              ;
+; ### # #      ###                                                      ;
+; # ### #      ###  Defines DLL exports for te nuclex lua plugin        ;
+; #  ## #   # ## ##                                                     ;
+; #   #  ###  #   # R1        (C)2002-2004 Markus Ewald -> License.txt  ;
+;  ;
+EXPORTS
+  NuclexVersion
+  NuclexRegister
+  NuclexUnregister

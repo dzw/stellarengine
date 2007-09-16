@@ -1,0 +1,12 @@
+;    ;
+;  #   #  ###  #   #                           -= Nuclex Library =-                             ;
+;  ##  # #   # ## ## ZipPlugin.def - Zip archive reader plugin                                  ;
+;  ### # #      ###                                                                             ;
+;  # ### #      ###  Provides the required dll function to register the                         ;
+;  #  ## #   # ## ## zip archive reader plugin to nuclex                                        ;
+;  #   #  ###  #   # R1                              (C)2002-2004 Markus Ewald -> License.txt   ;
+;    ;
+EXPORTS
+  NuclexVersion
+  NuclexRegister
+  NuclexUnregister

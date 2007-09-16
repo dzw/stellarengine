@@ -1,0 +1,12 @@
+;  ;
+; #   #  ###  #   #              -= Nuclex Project =-                   ;
+; ##  # #   # ## ## NCXZip.def - Nuclex DLL export definitions          ;
+; ### # #      ###                                                      ;
+; # ### #      ###  Defines DLL exports for Nuclex                      ;
+; #  ## #   # ## ##                                                     ;
+; #   #  ###  #   # R8                      2002-05-07 by Markus Ewald  ;
+;  ;
+EXPORTS
+  NuclexVersion
+  NuclexRegister
+  NuclexUnregister

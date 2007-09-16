@@ -1,0 +1,12 @@
+;  ;
+; #   #  ###  #   #              -= Nuclex Project =-                   ;
+; ##  # #   # ## ## NuclexPython.def - DLL export definitions           ;
+; ### # #      ###                                                      ;
+; # ### #      ###  Defines DLL exports for te nuclex python plugin     ;
+; #  ## #   # ## ##                                                     ;
+; #   #  ###  #   # R1        (C)2002-2004 Markus Ewald -> License.txt  ;
+;  ;
+EXPORTS
+  NuclexVersion
+  NuclexRegister
+  NuclexUnregister

@@ -1,0 +1,281 @@
+
+NES-Emulator besorgen und Snake Rattle'n Roll als Referenz nehmen
+
+
+
+-----------------------------------------------------------------------------
+Ziele
+-----------------------------------------------------------------------------
+
+Das Projekt soll zunächst ein Clone des Klassikers "Oxyd" werden,
+dabei jedoch volle 3D-Darstellung besitzen und realistische Physik
+via ODE/Tokamak bieten.
+
+Neue Möglichkeiten: Hügel, Rollbahnen, Sprünge
+
+Eine Weltkarte sollte durchgearbeitet werden müssen.
+
+
+-----------------------------------------------------------------------------
+Milestones
+-----------------------------------------------------------------------------
+
++ Alle notwendige Funktionalität in Nuclex vorhanden
+  - DirectInput fehlt noch
++ Menüsystem und Planet-Plugins funktionsfähig
++ Bodenplatten und Wandteile darstellbar
++ Kugel mit physikalisch korrektem Verhalten rollbar
++ Via Scripting kontrollierbare Platten und Wände
++ Benutzerfreundlicher Editor fertig
++ Assets (levels, models und texturen) komplett
+
+-----------------------------------------------------------------------------
+Architektur
+-----------------------------------------------------------------------------
+
+Main
+  +Kernel
+  +Theme
+  +GameServer
+
+  +gotoTitle()
+  +gotoGame()
+
+  UI\
+      TitleScreen
+      PlanetDialog // episode, custom map, savegame
+      BindingDialog
+      SettingsDialog
+      SavesDialog
+      GameDialog
+      LoadingScreen // abstract
+      WorldScreen // abstract
+      GameScreen // abstract
+
+  Game\
+    GameServer
+      +addEpisode()
+      +clearEpisodes()
+      +enumEpisodes()
+      
+      +loadGame()
+      +saveGame()
+      +restartMap()
+
+    Episode
+      +createPlanetScreen()
+      +createLoadingScreen()
+      +createGameScreen()
+      +createMap()
+    
+  Map\
+    MapServer
+      +addFloorFactory()
+      +addBlockFactory()
+      +addActorFactory()
+      +addItemFactory()
+      +clearFloorFactories()
+      +clearBlockFactories()
+      +clearActorFactories()
+      +clearItemFactories()
+      +createFloor()
+      +createBlock()
+      +createActor()
+      +createItem()
+      
+    Map
+      +load()
+      +save()
+      
+    Floor
+      <- BreakingFloor
+      <- WaterFloor
+      <- SwampFloor
+      <- WoodFloor
+      <- MetalFloor
+      <- SpaceFloor
+
+    Block
+      <- WallBlock
+      <- WoodBlock
+      <- ToxidBlock
+      <- PuzzleBlock
+      <- MirrorBlock
+
+    Actor
+      <- SawActor
+      <- PlayerActor
+      <- BombActor
+      <- LaserActor
+
+    Item
+      <- CoinItem
+      <- LifeItem
+      <- BombItem
+
+-----------------------------------------------------------------------------
+Map format
+-----------------------------------------------------------------------------
+
+4 'TXDM'
+4 Version
+
+
+
+<Map Width="123" Height="123" Version="1">
+  <Floor>
+    <Tile X="1" Y="1" Classification="Static" Type="FloorTile1" />
+  </Floor>
+  <Walls>
+    <Wall X="1" Y="1" Classification="Static" Type="WallBlock1" />
+  </Walls>
+  <Item>
+    <Item X="1" Y="1" Type="Coin5" />
+  </Item>
+  <Actor>
+    <Item X="1" Y="1" Type="HomingWindmill" />
+    <Item X="2" Y="2" Type="Player" />
+  </Actor>
+  <Script>
+    glassGiveTime = 0;
+
+    timerAddGlasses = function(float fTime) {
+      glassGiveTime += fTime
+      if glassGiveTime > 10 then
+        if Player.Inventory.CountOf("Glasses") = 0 then
+          Player.Inventory.Add new "Glasses"
+        end if
+      end if
+    }
+    
+    registerTimerCallback(timeAddGlasses)
+  </Script>
+</Map>
+  
+
+
+
+    
+-----------------------------------------------------------------------------
+Angebot
+-----------------------------------------------------------------------------
+
+Benötigte Assets
+
+    - A glass sphere, about 3/4 the size of a floor plate. Should have the
+      typical white reflection highlight on the top left.
+      
+    - Floor plates, squared with a thickness of about 1/2 of the length
+      on the x or y axis, getting darker to the bottom side
+      
+      - Metallic floor (at least 4 variations)
+      - Wooden floor (at least 4 variations)
+      - Breaking floor (4 stages of damage + falling pieces)
+      - Water
+      - Wooden floor once with a small crater once with a large crater in its center
+    
+    - Wall blocks, squared with about 1/2 of the length on the x or y axis high
+      
+      - Memory blocks (at least 8 types)
+      - Mirror blocks, with a mirror in the center of them
+        - Simple mirror plane
+        - Three-sided mirror (triangular when seen from above)
+      - Normal blocks, white and porcellan like
+      - 
+    
+    - Items
+    
+      - A cherry about the size of the glass sphere
+      - A bomb slightly smaller than the player
+      - A stick of dynamite, slightly smaller than the player
+      - 
+
+
+What you'll get:
+
+    $100 after your work is finished
+    A copy of the finished game
+    Your name in the credits
+    
+What I expect from you:
+
+    Create the assets shown on the list within reasonable time
+
+-----------------------------------------------------------------------------
+Ideas
+-----------------------------------------------------------------------------
+
+Workaround für fehlende Comboboxes:
+
+  - Rechts neben dem Videotreiber/Audiotreiber einen Button "change", über
+    den ein Unterdialog aufgeht, in dem man einen Treiber aus einer
+    gewöhnlichen Liste auswählen kann und darunter die Fähigkeiten
+    gezeigt bekommt.
+
+-----------------------------------------------------------------------------
+Scripts
+-----------------------------------------------------------------------------
+
+Bin\
+    Models.zip
+    Textures.zip
+    Sounds.zip
+    Music.zip
+    
+    Floortiles
+        Plain.Floortile.lua
+        Breaking.Floortile.lua
+        
+    Blocks
+        Wall.Block.lua
+        Bombgiver.Block.lua
+        
+    Items
+        Coin.Item.lua
+    
+
+Statische Meshes sollten zusammen mit anderen in einem gemeinsamen VB liegen.
+
+Entweder direkt zwischen statischen und dynamischen Elementen unterscheiden, oder automatisch erkennen, wenn sich ein Mesh ändert und diesen dann dynamisieren, bis er wieder ruht.
+
+Beides ? Sind rein statische VertexBuffer wesentlich schneller als selten modifizierte dynamische ?
+
+
+-----------------------------------------------------------------------------
+Aufgetretene Nuclex-Designprobleme
+-----------------------------------------------------------------------------
+
++ Es wäre vorteilhaft, wenn der GUI-Server von Nuclex das Theme nicht bei
+  jedem Zeichenvorgang neu anfordern würde.
+  
+  Wenn ein Add-On zu Toxid ein anderes Fensterdesign möchte, muss es im
+  Augenblick das Toxid-Theme modifizieren, statt einfach Fenster zu
+  übergeben, bei denen ein eigenes Theme gesetzt haben
+  
++ Das seperate Anlegen von Video- und AudioRenderer verhindert eine klare
+  Lösung der Fehlerbehandlung (zeichne ich ein Frame oder zeichne ich es
+  nicht ?). FrameContext standardisieren ?
+
++ Ein Frame-Widget wäre noch praktisch, welches ein Widget ist, jedoch
+  andere Widgets enthalten kann. Zum Beispiel um einen TabbedDialog
+  bauen zu können
+  
++ Die Widgets müssten schon beim erstellen (oder zumindest beim erhalten von Eingaben)
+  ihren Theme kennen. Eine ensureVisible()-Funktion an der Liste könnte z.B.
+  erst funktionieren, wenn die Liste einmal gezeichnet wurde, weil sonst die
+  Grösse einer Zeile nicht bekannt ist
+  
++ Die Ctrl-Taste kann nicht in üblicher Manier mit der Liste funktionieren, da
+  nur das jeweils aktive Element mitbekommt, wann die Taste gedrückt wird.
+
+  Es sei denn die Liste verlässt sich auf ein Binding vom InputServer, z.B.
+  "ListMultiselectModificator" oder so!
+
+
+
+
+
+
+
+                   -----------------------------------------------
+

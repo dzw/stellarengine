@@ -1,0 +1,270 @@
+<?xml version="1.0" standalone=no>
+
+<!-- Nuclex GUI Theme
+
+     Diese Datei beschreibt das Design der Nuclex-GUI für die zfx-Demo.
+
+     Kann nach belieben angepasst werden, jedoch sind einige der Features in
+     der Demo noch mehr oder weniger hardgecodet.
+-->
+
+<!-- Unser Theme heisst 'Aqua', ein billiges Rip-Off des MacOS-Stils ;-) -->
+<theme name="Aqua">
+
+    <!-- Von diesem Thema benötigte Resourcen -->
+    <resources>
+
+        <!-- Auf dieser Bitmap-Resource liegen alle Bildchen für unsere GUI -->
+        <bitmap name="aqua.skin" stream="aqua.theme.png" />
+
+        <!-- Der Font für unsere GUI -->
+        <font name="aqua.font" stream="tahoma.ttf" size=12 />
+        
+    </resources>
+
+    <!-- Fenster -->
+    <style name="window">
+
+        <state name="normal">
+            <image source="aqua.skin" placement=topleft x1=0 y1=164 x2=11 y2=175 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=top x1=11 y1=164 x2=22 y2=175 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=topright x1=22 y1=164 x2=33 y2=175 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=left x1=0 y1=175 x2=11 y2=186 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=center x1=11 y1=175 x2=22 y2=186 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=right x1=22 y1=175 x2=33 y2=186 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottomleft x1=0 y1=186 x2=11 y2=197 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottom x1=11 y1=186 x2=22 y2=197 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottomright x1=22 y1=186 x2=33 y2=197 color=#FFFFFFFF />
+        </state>
+
+    </style>
+
+    <!-- Der Text-Widget... -->
+    <style name="text">
+
+        <state name="normal">
+            <text source="aqua.font" alignment=left color=#FF000000 />
+        </state>
+
+    </style>
+
+    <style name="input">
+
+        <state name="disabled">
+            <image source="aqua.skin" placement=center x1=1 y1=149 x2=63 y2=161 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=left x1=0 y1=147 x2=1 y2=163 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=right x1=63 y1=147 x2=64 y2=163 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=topleft x1=0 y1=147 x2=1 y2=149 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=top x1=1 y1=147 x2=63 y2=149 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=topright x1=63 y1=147 x2=64 y2=149 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottomleft x1=0 y1=161 x2=1 y2=163 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottom x1=1 y1=161 x2=63 y2=163 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottomright x1=63 y1=161 x2=64 y2=163 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=left x=+4 y=-2 color=#FF808080 />
+        </state>
+
+        <state name="normal">
+            <image source="aqua.skin" placement=center x1=1 y1=149 x2=63 y2=161 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=left x1=0 y1=147 x2=1 y2=163 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=right x1=63 y1=147 x2=64 y2=163 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=topleft x1=0 y1=147 x2=1 y2=149 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=top x1=1 y1=147 x2=63 y2=149 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=topright x1=63 y1=147 x2=64 y2=149 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottomleft x1=0 y1=161 x2=1 y2=163 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottom x1=1 y1=161 x2=63 y2=163 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottomright x1=63 y1=161 x2=64 y2=163 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=left x=+4 y=-2 color=#FF000000 />
+        </state>
+
+        <state name="focus">
+            <image source="aqua.skin" placement=center x1=1 y1=149 x2=63 y2=161 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=left x1=0 y1=147 x2=1 y2=163 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=right x1=63 y1=147 x2=64 y2=163 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=topleft x1=0 y1=147 x2=1 y2=149 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=top x1=1 y1=147 x2=63 y2=149 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=topright x1=63 y1=147 x2=64 y2=149 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottomleft x1=0 y1=161 x2=1 y2=163 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottom x1=1 y1=161 x2=63 y2=163 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottomright x1=63 y1=161 x2=64 y2=163 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=left x=+4 y=-2 color=#FF0000FF />
+        </state>
+
+    </style>
+
+    <!-- Der Button-Widget... -->
+    <style name="button">
+
+        <!-- Deaktivierter Zustand -->
+        <state name="disabled">
+            <image source="aqua.skin" placement=center x1=13 y1=0 x2=51 y2=23 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=left x1=0 y1=0 x2=13 y2=23 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=right x1=51 y1=0 x2=64 y2=23 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=center y=-2 color=#FF808080 />
+        </state>
+
+        <!-- Normalzustand -->
+        <state name="normal">
+            <image source="aqua.skin" placement=center x1=77 y1=0 x2=115 y2=23 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=left x1=64 y1=0 x2=77 y2=23 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=right x1=115 y1=0 x2=128 y2=23 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=center y=-2 color=#FF000000 />
+        </state>
+
+        <!-- Zustand für MouseOver (hover-) Effekt -->
+        <state name="hover">
+            <image source="aqua.skin" placement=center x1=141 y1=0 x2=179 y2=23 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=left x1=128 y1=0 x2=141 y2=23 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=right x1=179 y1=0 x2=192 y2=23 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=center y=-2 color=#FF0000FF />
+        </state>
+
+        <!-- Gedrückter Zustand -->
+        <state name="pressed">
+            <image source="aqua.skin" placement=center x1=205 y1=0 x2=243 y2=23 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=left x1=192 y1=0 x2=205 y2=23 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=right x1=243 y1=0 x2=256 y2=23 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=center x=+1 y=-2 color=#FF000000 />
+        </state>
+
+    </style>
+
+    <!-- Das Toggle-Widget als RadioButton... -->
+    <style name="radio">
+
+        <!-- Deaktivierter Zustand -->
+        <state name="disabled">
+            <image source="aqua.skin" placement=center x1=0 y1=24 x2=13 y2=37 color=#FFFFFFFF />
+        </state>
+
+        <!-- Normalzustand -->
+        <state name="normal">
+            <image source="aqua.skin" placement=center x1=13 y1=24 x2=26 y2=37 color=#FFFFFFFF />
+        </state>
+
+        <!-- Zustand für MouseOver (hover-) Effekt -->
+        <state name="hover">
+            <image source="aqua.skin" placement=center x1=26 y1=24 x2=39 y2=37 color=#FFFFFFFF />
+        </state>
+
+        <!-- Gedrückter Zustand -->
+        <state name="pressed">
+            <image source="aqua.skin" placement=center x1=39 y1=24 x2=52 y2=37 color=#FFFFFFFF />
+        </state>
+
+        <!-- Deaktivierter Zustand -->
+        <state name="disabled_selected">
+            <image source="aqua.skin" placement=center x1=0 y1=37 x2=13 y2=50 color=#FFFFFFFF />
+        </state>
+
+        <!-- Normalzustand -->
+        <state name="normal_selected">
+            <image source="aqua.skin" placement=center x1=13 y1=37 x2=26 y2=50 color=#FFFFFFFF />
+        </state>
+
+        <!-- Zustand für MouseOver (hover-) Effekt -->
+        <state name="hover_selected">
+            <image source="aqua.skin" placement=center x1=26 y1=37 x2=39 y2=50 color=#FFFFFFFF />
+        </state>
+
+        <!-- Gedrückter Zustand -->
+        <state name="pressed_selected">
+            <image source="aqua.skin" placement=center x1=39 y1=37 x2=52 y2=50 color=#FFFFFFFF />
+        </state>
+
+    </style>
+
+    <!-- Das Toggle-Widget als CheckBox... -->
+    <style name="check">
+        
+        <!-- Deaktivierter Zustand -->
+        <state name="disabled">
+            <image source="aqua.skin" placement=center x1=0 y1=51 x2=17 y2=66 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=left x=+4 y=-2 color=#FF000000 />
+        </state>
+
+        <!-- Normalzustand -->
+        <state name="normal">
+            <image source="aqua.skin" placement=center x1=17 y1=51 x2=34 y2=66 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=left x=+4 y=-2 color=#FF000000 />
+        </state>
+
+        <!-- Zustand für MouseOver (hover-) Effekt -->
+        <state name="hover">
+            <image source="aqua.skin" placement=center x1=34 y1=51 x2=51 y2=66 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=left x=+4 y=-2 color=#FF0000FF />
+        </state>
+
+        <!-- Gedrückter Zustand -->
+        <state name="pressed">
+            <image source="aqua.skin" placement=center x1=51 y1=51 x2=68 y2=66 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=left x=+4 y=-2 color=#FF0000FF />
+        </state>
+
+        <!-- Deaktivierter Zustand -->
+        <state name="disabled_selected">
+            <image source="aqua.skin" placement=center x1=0 y1=66 x2=17 y2=81 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=left x=+4 y=-2 color=#FF000000 />
+        </state>
+
+        <!-- Normalzustand -->
+        <state name="normal_selected">
+            <image source="aqua.skin" placement=center x1=17 y1=66 x2=34 y2=81 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=left x=+4 y=-2 color=#FF000000 />
+        </state>
+
+        <!-- Zustand für MouseOver (hover-) Effekt -->
+        <state name="hover_selected">
+            <image source="aqua.skin" placement=center x1=34 y1=66 x2=51 y2=81 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=left x=+4 y=-2 color=#FF0000FF />
+        </state>
+
+        <!-- Gedrückter Zustand -->
+        <state name="pressed_selected">
+            <image source="aqua.skin" placement=center x1=51 y1=66 x2=68 y2=81 color=#FFFFFFFF />
+            <text source="aqua.font" alignment=left x=+4 y=-2 color=#FF0000FF />
+        </state>
+
+    </style>
+
+    <!-- Der Slider-Widget horizontal... -->
+    <style name="slider_horizontal">
+
+        <state name="normal">
+            <image source="aqua.skin" placement=center x1=109 y1=82 x2=151 y2=99 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=left x1=98 y1=82 x2=109 y2=99 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=right x1=151 y1=82 x2=162 y2=99 color=#FFFFFFFF />
+        </state>
+
+        <state name="pressed">
+            <image source="aqua.skin" placement=center x1=109 y1=82 x2=151 y2=99 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=left x1=98 y1=82 x2=109 y2=99 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=right x1=151 y1=82 x2=162 y2=99 color=#FFFFFFFF />
+        </state>
+
+    </style>
+
+    <!-- Der Slider-Widget vertikal... -->
+    <style name="slider_vertical">
+
+        <state name="normal">
+            <image source="aqua.skin" placement=center x1=17 y1=128 x2=34 y2=170 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=top x1=17 y1=117 x2=34 y2=128 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottom x1=17 y1=170 x2=34 y2=181 color=#FFFFFFFF />
+        </state>
+
+        <state name="pressed">
+            <image source="aqua.skin" placement=center x1=17 y1=128 x2=34 y2=170 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=top x1=17 y1=117 x2=34 y2=128 color=#FFFFFFFF />
+            <image source="aqua.skin" placement=bottom x1=17 y1=170 x2=34 y2=181 color=#FFFFFFFF />
+        </state>
+
+    </style>
+
+    <style name="cursor">
+
+        <state name="normal">
+            <image source="aqua.skin" placement=topleft x1=239 y1=227 x2=256 y2=256 color=#FFFFFFFF />
+        </state>
+
+    </style>
+</theme>

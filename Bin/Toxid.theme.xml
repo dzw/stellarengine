@@ -1,0 +1,340 @@
+<?xml version="1.0" standalone=no>
+
+<!--
+
+Toxid GUI Theme
+
+This file describes the design of the toxid GUI. Feel free to play
+around with it.
+
+-->
+
+<!-- Our theme is called 'xp' because it's a stupid ripoff of windows -->
+<theme name="xp">
+
+    <!-- Resources required by this theme -->
+    <resources>
+    
+        <!-- This bitmap contains all the stuff elements of the GUI -->
+        <bitmap name="xp.skin" stream="xp.theme.png" />
+
+        <!-- The font we're going to use -->
+        <font name="xp.font" stream="tahoma.ttf" size=12 />
+        
+    </resources>
+
+    <!-- Normal windows -->
+    <style name="window">
+
+        <state name="normal">
+            <image source="xp.skin" placement=topleft x1=0 y1=168 x2=3 y2=171 color=#FFFFFFFF />
+            <image source="xp.skin" placement=top x1=3 y1=168 x2=61 y2=171 color=#FFFFFFFF />
+            <image source="xp.skin" placement=topright x1=61 y1=168 x2=64 y2=171 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=0 y1=171 x2=3 y2=229 color=#FFFFFFFF />
+            <image source="xp.skin" placement=center x1=3 y1=171 x2=61 y2=229 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=61 y1=171 x2=64 y2=229 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomleft x1=0 y1=229 x2=3 y2=233 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottom x1=3 y1=229 x2=61 y2=233 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomright x1=61 y1=229 x2=64 y2=233 color=#FFFFFFFF />
+        </state>
+
+    </style>
+
+    <!-- Text widget -->
+    <style name="text">
+
+        <state name="normal">
+            <text source="xp.font" alignment=left color=#FF000000 />
+        </state>
+
+    </style>
+
+    <!-- Input-Box widget -->
+    <style name="input">
+
+        <state name="disabled">
+            <image source="xp.skin" placement=topleft x1=0 y1=149 x2=1 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=top x1=1 y1=149 x2=63 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=topright x1=63 y1=149 x2=64 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=0 y1=150 x2=1 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=center x1=1 y1=150 x2=63 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=63 y1=150 x2=64 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomleft x1=0 y1=166 x2=1 y2=167 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottom x1=1 y1=166 x2=63 y2=167 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomright x1=63 y1=166 x2=64 y2=167 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF808080 />
+        </state>
+
+        <state name="normal">
+            <image source="xp.skin" placement=topleft x1=0 y1=149 x2=1 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=top x1=1 y1=149 x2=63 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=topright x1=63 y1=149 x2=64 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=0 y1=150 x2=1 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=center x1=1 y1=150 x2=63 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=63 y1=150 x2=64 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomleft x1=0 y1=166 x2=1 y2=167 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottom x1=1 y1=166 x2=63 y2=167 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomright x1=63 y1=166 x2=64 y2=167 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF000000 />
+        </state>
+
+        <state name="focus">
+            <image source="xp.skin" placement=topleft x1=0 y1=149 x2=1 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=top x1=1 y1=149 x2=63 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=topright x1=63 y1=149 x2=64 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=0 y1=150 x2=1 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=center x1=1 y1=150 x2=63 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=63 y1=150 x2=64 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomleft x1=0 y1=166 x2=1 y2=167 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottom x1=1 y1=166 x2=63 y2=167 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomright x1=63 y1=166 x2=64 y2=167 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF0000FF />
+        </state>
+
+    </style>
+
+    <!-- ListBox widget -->
+    <style name="list">
+
+        <state name="disabled">
+            <image source="xp.skin" placement=topleft x1=0 y1=149 x2=1 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=top x1=1 y1=149 x2=63 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=topright x1=63 y1=149 x2=64 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=0 y1=150 x2=1 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=center x1=1 y1=150 x2=63 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=63 y1=150 x2=64 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomleft x1=0 y1=166 x2=1 y2=167 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottom x1=1 y1=166 x2=63 y2=167 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomright x1=63 y1=166 x2=64 y2=167 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF808080 />
+        </state>
+
+        <state name="normal">
+            <image source="xp.skin" placement=topleft x1=0 y1=149 x2=1 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=top x1=1 y1=149 x2=63 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=topright x1=63 y1=149 x2=64 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=0 y1=150 x2=1 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=center x1=1 y1=150 x2=63 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=63 y1=150 x2=64 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomleft x1=0 y1=166 x2=1 y2=167 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottom x1=1 y1=166 x2=63 y2=167 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomright x1=63 y1=166 x2=64 y2=167 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=+2 color=#FF000000 />
+        </state>
+
+        <state name="focus">
+            <image source="xp.skin" placement=topleft x1=0 y1=149 x2=1 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=top x1=1 y1=149 x2=63 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=topright x1=63 y1=149 x2=64 y2=150 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=0 y1=150 x2=1 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=center x1=1 y1=150 x2=63 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=63 y1=150 x2=64 y2=166 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomleft x1=0 y1=166 x2=1 y2=167 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottom x1=1 y1=166 x2=63 y2=167 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottomright x1=63 y1=166 x2=64 y2=167 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF0000FF />
+        </state>
+
+    </style>
+
+    <!-- PushButton widget -->
+    <style name="button">
+
+        <!-- Disabled state -->
+        <state name="disabled">
+            <image source="xp.skin" placement=center x1=13 y1=0 x2=51 y2=23 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=0 y1=0 x2=13 y2=23 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=51 y1=0 x2=64 y2=23 color=#FFFFFFFF />
+            <text source="xp.font" alignment=center y=-2 color=#FF808080 />
+        </state>
+
+        <!-- Normal state -->
+        <state name="normal">
+            <image source="xp.skin" placement=center x1=77 y1=0 x2=115 y2=23 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=64 y1=0 x2=77 y2=23 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=115 y1=0 x2=128 y2=23 color=#FFFFFFFF />
+            <text source="xp.font" alignment=center y=-2 color=#FF000000 />
+        </state>
+
+        <!-- State for mouse over highlight -->
+        <state name="hover">
+            <image source="xp.skin" placement=center x1=141 y1=0 x2=179 y2=23 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=128 y1=0 x2=141 y2=23 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=179 y1=0 x2=192 y2=23 color=#FFFFFFFF />
+            <text source="xp.font" alignment=center y=-2 color=#FF0000FF />
+        </state>
+
+        <!-- Pressed state -->
+        <state name="pressed">
+            <image source="xp.skin" placement=center x1=205 y1=0 x2=243 y2=23 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=192 y1=0 x2=205 y2=23 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=243 y1=0 x2=256 y2=23 color=#FFFFFFFF />
+            <text source="xp.font" alignment=center x=+1 y=-2 color=#FF000000 />
+        </state>
+
+    </style>
+
+    <!-- The toggle widget as radio button -->
+    <style name="radio">
+
+        <!-- Disabled state -->
+        <state name="disabled">
+            <image source="xp.skin" placement=center x1=0 y1=24 x2=13 y2=37 color=#FFFFFFFF />
+        </state>
+
+        <!-- Normal state -->
+        <state name="normal">
+            <image source="xp.skin" placement=center x1=13 y1=24 x2=26 y2=37 color=#FFFFFFFF />
+        </state>
+
+        <!-- State for mouse over highlight -->
+        <state name="hover">
+            <image source="xp.skin" placement=center x1=26 y1=24 x2=39 y2=37 color=#FFFFFFFF />
+        </state>
+
+        <!-- Pressed state -->
+        <state name="pressed">
+            <image source="xp.skin" placement=center x1=39 y1=24 x2=52 y2=37 color=#FFFFFFFF />
+        </state>
+
+        <!-- Disabled selected state -->
+        <state name="disabled_selected">
+            <image source="xp.skin" placement=center x1=0 y1=37 x2=13 y2=50 color=#FFFFFFFF />
+        </state>
+
+        <!-- Normal selected state -->
+        <state name="normal_selected">
+            <image source="xp.skin" placement=center x1=13 y1=37 x2=26 y2=50 color=#FFFFFFFF />
+        </state>
+
+        <!-- State for mouse over highlight when selected -->
+        <state name="hover_selected">
+            <image source="xp.skin" placement=center x1=26 y1=37 x2=39 y2=50 color=#FFFFFFFF />
+        </state>
+
+        <!-- Pressed selected state -->
+        <state name="pressed_selected">
+            <image source="xp.skin" placement=center x1=39 y1=37 x2=52 y2=50 color=#FFFFFFFF />
+        </state>
+
+    </style>
+
+    <!-- The toggle widget as checkbox -->
+    <style name="check">
+        
+        <!-- Disabled state -->
+        <state name="disabled">
+            <image source="xp.skin" placement=center x1=0 y1=51 x2=13 y2=64 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF606060 />
+        </state>
+
+        <!-- Normal state -->
+        <state name="normal">
+            <image source="xp.skin" placement=center x1=13 y1=51 x2=26 y2=64 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF000000 />
+        </state>
+
+        <!-- State for mouse over highlight -->
+        <state name="hover">
+            <image source="xp.skin" placement=center x1=26 y1=51 x2=39 y2=64 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF0000FF />
+        </state>
+
+        <!-- Pressed state -->
+        <state name="pressed">
+            <image source="xp.skin" placement=center x1=39 y1=51 x2=52 y2=64 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF0000FF />
+        </state>
+
+        <!-- Disabled selected state -->
+        <state name="disabled_selected">
+            <image source="xp.skin" placement=center x1=0 y1=64 x2=13 y2=77 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF606060 />
+        </state>
+
+        <!-- Normal selected state -->
+        <state name="normal_selected">
+            <image source="xp.skin" placement=center x1=13 y1=64 x2=26 y2=77 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF000000 />
+        </state>
+
+        <!-- State for mouse over highlight when selected -->
+        <state name="hover_selected">
+            <image source="xp.skin" placement=center x1=26 y1=64 x2=39 y2=77 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF0000FF />
+        </state>
+
+        <!-- Pressed selected state -->
+        <state name="pressed_selected">
+            <image source="xp.skin" placement=center x1=39 y1=64 x2=52 y2=77 color=#FFFFFFFF />
+            <text source="xp.font" alignment=left x=+4 y=-2 color=#FF0000FF />
+        </state>
+
+    </style>
+
+    <!-- Horizontal slider widget -->
+    <style name="slider_horizontal">
+
+        <state name="background">
+            <image source="xp.skin" placement=center x1=68 y1=78 x2=132 y2=95 color=#FFFFFFFF />
+        </state>
+
+        <state name="normal">
+            <image source="xp.skin" placement=center x1=71 y1=95 x2=129 y2=112 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=68 y1=95 x2=71 y2=112 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=129 y1=95 x2=132 y2=112 color=#FFFFFFFF />
+        </state>
+
+        <state name="hover">
+            <image source="xp.skin" placement=center x1=71 y1=112 x2=129 y2=129 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=68 y1=112 x2=71 y2=129 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=129 y1=112 x2=132 y2=129 color=#FFFFFFFF />
+        </state>
+
+        <state name="pressed">
+            <image source="xp.skin" placement=center x1=71 y1=129 x2=129 y2=146 color=#FFFFFFFF />
+            <image source="xp.skin" placement=left x1=68 y1=129 x2=71 y2=146 color=#FFFFFFFF />
+            <image source="xp.skin" placement=right x1=129 y1=129 x2=132 y2=146 color=#FFFFFFFF />
+        </state>
+    </style>
+
+    <!-- Vertical slider widget -->
+    <style name="slider_vertical">
+
+        <state name="background">
+            <image source="xp.skin" placement=center x1=0 y1=78 x2=17 y2=142 color=#FFFFFFFF />
+        </state>
+
+        <state name="normal">
+            <image source="xp.skin" placement=center x1=17 y1=81 x2=34 y2=139 color=#FFFFFFFF />
+            <image source="xp.skin" placement=top x1=17 y1=78 x2=34 y2=81 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottom x1=17 y1=139 x2=34 y2=142 color=#FFFFFFFF />
+        </state>
+
+        <state name="hover">
+            <image source="xp.skin" placement=center x1=34 y1=81 x2=51 y2=139 color=#FFFFFFFF />
+            <image source="xp.skin" placement=top x1=34 y1=78 x2=51 y2=81 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottom x1=34 y1=139 x2=51 y2=142 color=#FFFFFFFF />
+        </state>
+
+        <state name="pressed">
+            <image source="xp.skin" placement=center x1=51 y1=81 x2=68 y2=139 color=#FFFFFFFF />
+            <image source="xp.skin" placement=top x1=51 y1=78 x2=68 y2=81 color=#FFFFFFFF />
+            <image source="xp.skin" placement=bottom x1=51 y1=139 x2=68 y2=142 color=#FFFFFFFF />
+        </state>
+
+    </style>
+
+    <style name="cursor">
+
+        <state name="normal">
+            <image source="xp.skin" placement=topleft x1=239 y1=227 x2=256 y2=256 color=#FFFFFFFF />
+        </state>
+
+    </style>
+    
+    <cursor>
+        <image source="xp.skin" hotspotx=0 hotspoty=0 x1=239 y1=227 x2=256 y2=256 color=#FFFFFFFF />
+    </cursor>
+
+</theme>

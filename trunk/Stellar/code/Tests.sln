@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual C++ Express 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbase_win32", "Tests\testbase_win32\testbase_win32.vcproj", "{365E6A29-BA41-4ED2-9F27-54EED5A3E68A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testFoundation_win32", "Tests\testFoundation_win32\testFoundation_win32.vcproj", "{2598CD3C-B506-4CB0-979F-2322EE2D1209}"
+	ProjectSection(ProjectDependencies) = postProject
+		{365E6A29-BA41-4ED2-9F27-54EED5A3E68A} = {365E6A29-BA41-4ED2-9F27-54EED5A3E68A}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{365E6A29-BA41-4ED2-9F27-54EED5A3E68A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{365E6A29-BA41-4ED2-9F27-54EED5A3E68A}.Debug|Win32.Build.0 = Debug|Win32
+		{365E6A29-BA41-4ED2-9F27-54EED5A3E68A}.Release|Win32.ActiveCfg = Release|Win32
+		{365E6A29-BA41-4ED2-9F27-54EED5A3E68A}.Release|Win32.Build.0 = Release|Win32
+		{2598CD3C-B506-4CB0-979F-2322EE2D1209}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2598CD3C-B506-4CB0-979F-2322EE2D1209}.Debug|Win32.Build.0 = Debug|Win32
+		{2598CD3C-B506-4CB0-979F-2322EE2D1209}.Release|Win32.ActiveCfg = Release|Win32
+		{2598CD3C-B506-4CB0-979F-2322EE2D1209}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

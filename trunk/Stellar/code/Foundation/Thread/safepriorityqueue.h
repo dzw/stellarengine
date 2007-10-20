@@ -18,7 +18,7 @@
 //------------------------------------------------------------------------------
 namespace Threading
 {
-template<class PRITYPE, class TYPE> class SafePriorityQueue : protected Util::Queue<Util::KeyValuePair<PRITYPE, TYPE>>
+template<class PRITYPE, class TYPE> class SafePriorityQueue : protected std::queue<PRITYPE, TYPE>
 {
 public:
     /// constructor
@@ -135,7 +135,7 @@ template<class PRITYPE, class TYPE> void
 SafePriorityQueue<PRITYPE,TYPE>::EraseMatchingElements(const TYPE& e)
 {
     this->criticalSection.Enter();
-    Util::Array<Util::KeyValuePair<PRITYPE,TYPE>>::Iterator iter; 
+    std::vector<Util::KeyValuePair<PRITYPE,TYPE>>::Iterator iter; 
     for (iter = this->queueArray.Begin(); iter != this->queueArray.End();)
     {
         if ((*iter).Value() == e)

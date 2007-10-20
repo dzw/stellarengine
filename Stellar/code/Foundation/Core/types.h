@@ -61,7 +61,8 @@ static const unsigned int InvalidIndex = 0xffffffff;
 
 // alignment macro
 #if __WIN32__
-#define n_align(X) __declspec(align(X))
+#define s_align(X)
+//#define s_align(X) __declspec(align(X))
 #else
 #error "Unsupported platform!"
 #endif

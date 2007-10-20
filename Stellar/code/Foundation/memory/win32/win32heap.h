@@ -14,8 +14,8 @@
 #include "core/types.h"
 #include "thread/interlocked.h"
 #include "thread/criticalsection.h"
-//#include "utility/array.h"
-//#include "utility/list.h"
+#include "utility/array.h"
+#include "utility/list.h"
 
 //------------------------------------------------------------------------------
 namespace Win32

@@ -1,0 +1,127 @@
+SharedResourceServer  资源共享
+
+
+
+
+WM4
+VisibleObject  渲染前设置可见对象
+
+
+vertexbuffer功能：
+顶点格式FVF  VertexLayout	VertexDecl -- VertexLayout
+顶点大小
+复制顶点数据 Lock unlock
+设备管理 IDirect3DVertexBuffer9
+
+
+
+WM4
+vertexbuffer:
+顶点属性（Position、Normal、Color、Fog、BlendIndices、Coord...)
+顶点数据
+设备管理（在bindable中保存设备指针)
+
+
+effect begin
+commit
+effect end
+
+D3D9RenderDevice::BeginFrame
+    FrameShader::Render					控制渲染多个FramePass
+        FramePass::Render				渲染到rendertarget
+	    // apply shader variables
+
+	    D3D9RenderDevice::BeginPass
+	    FrameBatch::Render				批次渲染，几个特效组合需要多次渲染。
+		// apply shader variables
+
+		BeginBatch
+		RenderBatch				设置Technique,variable等，并渲染
+		EndBatch
+	    D3D9RenderDevice::EndPass
+D3D9RenderDevice::EndFrame
+
+
+
+资源建立方式,具体见N3的ResourceManager
+ResourceManager
+    SharedResourceServer
+        Resource
+
+ResourceManager::CreateResource(const Rtti& resType, const string resName)
+ResourceManager::CreateResource(const Rtti& resType, const ResourceId& resId)
+{
+    SharedResourceServer::CreateSharedResource(resId, resClass, resLoaderClass)
+    load resource
+}
+
+vertex layout（FVF）设置方法:
+Array<VertexComponent> vertexComponents;
+vertexComponents.Append(VertexComponent(VertexComponent::Position, 0, VertexComponent::Float3));
+vertexComponents.Append(VertexComponent(VertexComponent::TexCoord, 0, VertexComponent::Float2));
+VertexBuffer.Setup(vertexComponents);
+
+
+shader应用:
+
+shader
+    constants
+    program
+
+EnableVProgram
+    SetVertexShader()
+    process the sampler information		设置纹理采样信息，指定采样类型、纹理编号
+    process the render constants		获取全局着色变量值，并设置到指定寄存器
+    process the numerical constants
+    process the user-defined constants
+EnablePProgram
+    步聚同上
+EnableTexture V
+    Anisotropic filtering value
+	D3DSAMP_MAXANISOTROPY
+    Set the filter mode
+	D3DSAMP_MAGFILTER
+    Set the mipmap mode
+	D3DSAMP_MINFILTER
+	D3DSAMP_MIPFILTER
+    Set the border color (for clamp to border)
+	D3DSAMP_BORDERCOLOR
+    Set Address mode
+	D3DSAMP_ADDRESSU
+	D3DSAMP_ADDRESSV
+	D3DSAMP_ADDRESSW   如果是3d采样
+    SetTexture
+EnableTexture P
+    同上
+OnEnableVBuffer
+    SetStreamSource
+    SetVertexDeclaration
+Draw
+
+
+Spatial
+    Local		本地坐标
+    World		世界坐标
+    WorldBound		世界包围盒
+    CullingMode		栋选方式
+    m_pkParent		父指针
+    m_kGlobalStates	全局渲染状态（数组）
+    m_kLights		灯光状态（数组）
+    m_kEffects		特效状态（数组）
+
+Geometry 继承自Spatial
+    VertexBufferPtr	顶点缓冲
+    IndexBufferPtr	索引缓冲
+    BoundingVolumePtr	模型包围盒
+    LightingEffectPtr	光照效果
+    GeometryType     	PrimitiveTopology  渲染方式(LineList、TriangleStrip等)
+    GlobalState    	全局渲染状态(alpha,cull,material,zbuffer等等)
+    
+特殊的对象可以继承Geometry来实现特殊化。
+
+Node 继承自Spatial
+    m_kChild
+
+
+
+

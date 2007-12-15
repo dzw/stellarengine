@@ -21,15 +21,6 @@ class ShaderInstance : public Direct3D9::D3D9ShaderInstance
     DeclareClass(ShaderInstance);
 };
 }
-#elif __XBOX360__
-#include "coregraphics/xbox360/xbox360shaderinstance.h"
-namespace CoreGraphics
-{
-class ShaderInstance : public Xbox360::Xbox360ShaderInstance
-{
-    DeclareClass(ShaderInstance);
-};
-}
 #else
 #error "ShaderInstance class not implemented on this platform!"
 #endif

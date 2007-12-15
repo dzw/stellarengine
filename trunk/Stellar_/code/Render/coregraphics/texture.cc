@@ -10,12 +10,6 @@ namespace CoreGraphics
 {
 ImplementClass(CoreGraphics::Texture, 'TEXR', Direct3D9::D3D9Texture);
 }
-#elif __XBOX360__
-// FIXME!
-namespace CoreGraphics
-{
-ImplementClass(CoreGraphics::Texture, 'TEXR', Xbox360::Xbox360Texture);
-}
 #else
 #error "Texture class not implemented on this platform!"
 #endif

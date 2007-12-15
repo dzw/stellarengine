@@ -21,15 +21,6 @@ class ShaderVariable : public Direct3D9::D3D9ShaderVariable
     DeclareClass(ShaderVariable);
 };
 }
-#elif __XBOX360__
-#include "coregraphics/xbox360/xbox360shadervariable.h"
-namespace CoreGraphics
-{
-class ShaderVariable : public Xbox360::Xbox360ShaderVariable
-{
-    DeclareClass(ShaderVariable);
-};
-}
 #else
 #error "ShaderVariable class not implemented on this platform!"
 #endif

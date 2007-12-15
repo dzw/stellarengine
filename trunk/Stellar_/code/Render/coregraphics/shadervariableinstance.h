@@ -24,15 +24,6 @@ class ShaderVariableInstance : public Base::ShaderVariableInstanceBase
     DeclareClass(ShaderVariableInstance);
 };
 }
-#elif __XBOX360__
-#include "coregraphics/base/shadervariableinstancebase.h"
-namespace CoreGraphics
-{
-class ShaderVariableInstance : public Base::ShaderVariableInstanceBase
-{
-    DeclareClass(ShaderVariableInstance);
-};
-}
 #else
 #error "ShaderVariableInstance class not implemented on this platform!"
 #endif

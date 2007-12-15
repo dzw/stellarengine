@@ -10,12 +10,6 @@ namespace CoreGraphics
 {
 ImplementClass(CoreGraphics::Shader, 'SHDR', Direct3D9::D3D9Shader);
 }
-#elif __XBOX360__
-// FIXME!
-namespace CoreGraphics
-{
-ImplementClass(CoreGraphics::Shader, 'SHDR', Xbox360::Xbox360Shader);
-}
 #else
 #error "Shader class not implemented on this platform!"
 #endif

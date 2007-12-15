@@ -19,16 +19,6 @@ class Shader : public Direct3D9::D3D9Shader
     DeclareClass(Shader);
 };
 }
-#elif __XBOX360__
-// FIXME!
-#include "coregraphics/xbox360/xbox360shader.h"
-namespace CoreGraphics
-{
-class Shader : public Xbox360::Xbox360Shader
-{
-    DeclareClass(Shader);
-};
-}
 #else
 #error "Shader class not implemented on this platform!"
 #endif

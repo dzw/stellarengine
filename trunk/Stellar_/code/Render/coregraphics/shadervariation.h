@@ -19,15 +19,6 @@ class ShaderVariation : public Direct3D9::D3D9ShaderVariation
     DeclareClass(ShaderVariation);
 };
 }
-#elif __XBOX360__
-#include "coregraphics/xbox360/xbox360shadervariation.h"
-namespace CoreGraphics
-{
-class ShaderVariation : public Xbox360::Xbox360ShaderVariation
-{
-    DeclareClass(ShaderVariation);
-};
-}
 #else
 #error "ShaderVariation class not implemented on this platform!"
 #endif

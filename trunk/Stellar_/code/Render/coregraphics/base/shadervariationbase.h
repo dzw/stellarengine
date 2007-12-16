@@ -15,8 +15,8 @@
     (C) 2007 Radon Labs GmbH
 */    
 #include "core/refcounted.h"
-#include "util/string.h"
-#include "util/atom.h"
+#include "utility/string.h"
+#include "utility/atom.h"
 #include "coregraphics/shaderfeature.h"
 
 //------------------------------------------------------------------------------

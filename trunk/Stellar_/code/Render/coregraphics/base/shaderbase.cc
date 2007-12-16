@@ -26,7 +26,7 @@ ShaderBase::ShaderBase()
 */
 ShaderBase::~ShaderBase()
 {
-    s_assert(0 == this->shaderInstances.Size());
+    s_assert(0 == this->shaderInstances.size());
 }
 
 //------------------------------------------------------------------------------
@@ -49,9 +49,10 @@ void
 ShaderBase::DiscardShaderInstance(const Ptr<ShaderInstance>& inst)
 {
     inst->Cleanup();
-    IndexT i = this->shaderInstances.find(inst);
-    s_assert(InvalidIndex != i);
-    this->shaderInstances.erase(i);
+	Util::Array<Ptr<CoreGraphics::ShaderInstance>>::iterator itr = 
+		this->shaderInstances.Find(inst);
+    s_assert(this->shaderInstances.end() != itr);
+    this->shaderInstances.erase(itr);
 }
 
 } // namespace Base

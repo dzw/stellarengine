@@ -60,7 +60,7 @@ D3D9Shader::OnLostDevice()
 
         // notify our instances
         IndexT i;
-        for (i = 0; i < this->shaderInstances.Size(); i++)
+        for (i = 0; i < this->shaderInstances.size(); i++)
         {
             this->shaderInstances[i].downcast<D3D9ShaderInstance>()->OnLostDevice();
         }
@@ -80,7 +80,7 @@ D3D9Shader::OnResetDevice()
 
         // notify our instances
         IndexT i;
-        for (i = 0; i < this->shaderInstances.Size(); i++)
+        for (i = 0; i < this->shaderInstances.size(); i++)
         {
             this->shaderInstances[i].downcast<D3D9ShaderInstance>()->OnResetDevice();
         }

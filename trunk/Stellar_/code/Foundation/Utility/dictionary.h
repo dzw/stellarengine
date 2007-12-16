@@ -59,7 +59,7 @@ public:
 
 protected:
 	std::map<KEYTYPE, VALUETYPE> keyValuePairs;
-	typedef std::map<KEYTYPE, VALUETYPE>::iterator itr_type;
+	typedef std::map<KEYTYPE, VALUETYPE> itr_type;
 };
 
 //------------------------------------------------------------------------------
@@ -105,7 +105,7 @@ Dictionary<KEYTYPE, VALUETYPE>::Clear()
 template<class KEYTYPE, class VALUETYPE> SizeT
 Dictionary<KEYTYPE, VALUETYPE>::Size() const
 {
-	return this->keyValuePairs.Size();
+	return (SizeT)this->keyValuePairs.size();
 }
 
 //------------------------------------------------------------------------------
@@ -114,7 +114,7 @@ Dictionary<KEYTYPE, VALUETYPE>::Size() const
 template<class KEYTYPE, class VALUETYPE> bool
 Dictionary<KEYTYPE, VALUETYPE>::IsEmpty() const
 {
-	return (0 == this->keyValuePairs.Size());
+	return (0 == this->keyValuePairs.size());
 }
 
 //------------------------------------------------------------------------------
@@ -141,7 +141,7 @@ Dictionary<KEYTYPE, VALUETYPE>::Add(const KEYTYPE& key, const VALUETYPE& value)
 template<class KEYTYPE, class VALUETYPE> void
 Dictionary<KEYTYPE, VALUETYPE>::Erase(const KEYTYPE& key)
 {
-	itr_type itr = this->keyValuePairs.find(key);
+	itr_type::iterator itr = this->keyValuePairs.find(key);
 	s_assert(itr != this->keyValuePairs.end());
 	this->keyValuePairs.erase(itr);
 }
@@ -171,8 +171,8 @@ Dictionary<KEYTYPE, VALUETYPE>::FindIndex(const KEYTYPE& key) const
 template<class KEYTYPE, class VALUETYPE> bool
 Dictionary<KEYTYPE, VALUETYPE>::Contains(const KEYTYPE& key) const
 {
-	itr_type itr = this->keyValuePairs.find(key);
-	return (itr != this->keyValuePairs.end())
+	itr_type::const_iterator itr = this->keyValuePairs.find(key);
+	return (itr != this->keyValuePairs.end());
 }
 
 //------------------------------------------------------------------------------
@@ -230,8 +230,9 @@ Dictionary<KEYTYPE, VALUETYPE>::operator[](const KEYTYPE& key)
 template<class KEYTYPE, class VALUETYPE> const VALUETYPE&
 Dictionary<KEYTYPE, VALUETYPE>::operator[](const KEYTYPE& key) const
 {
-	s_assert(this->Contains(key));
-	return this->keyValuePairs[key];
+	itr_type::const_iterator itr = this->keyValuePairs.find(key);
+	s_assert(itr != this->keyValuePairs.end());
+	return itr->second;
 }
 
 //------------------------------------------------------------------------------
@@ -241,7 +242,7 @@ template<class KEYTYPE, class VALUETYPE> Array<VALUETYPE>
 Dictionary<KEYTYPE, VALUETYPE>::ValuesAsArray() const
 {
 	Array<VALUETYPE> result;
-	itr_type itr = this->keyValuePairs.begin();
+	itr_type::iterator itr = this->keyValuePairs.begin();
 	for (; itr != this->keyValuePairs.end(); itr++)
 	{
 		result.push_back(itr->second);
@@ -256,7 +257,7 @@ template<class KEYTYPE, class VALUETYPE> Array<KEYTYPE>
 Dictionary<KEYTYPE, VALUETYPE>::KeysAsArray() const
 {
 	Array<VALUETYPE> result;
-	itr_type itr = this->keyValuePairs.begin();
+	itr_type::iterator itr = this->keyValuePairs.begin();
 	for (; itr != this->keyValuePairs.end(); itr++)
 	{
 		result.push_back(itr->first);

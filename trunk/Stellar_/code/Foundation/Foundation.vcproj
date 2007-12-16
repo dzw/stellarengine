@@ -307,6 +307,18 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Utility\atom.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Utility\blob.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\Utility\blob.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Utility\crc.cc"
 				>
 			</File>
@@ -323,7 +335,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Utility\guid.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Utility\hashtable.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Utility\proxy.h"
 				>
 			</File>
 			<File
@@ -338,6 +358,22 @@
 				RelativePath=".\Utility\system.h"
 				>
 			</File>
+			<File
+				RelativePath=".\Utility\variant.h"
+				>
+			</File>
+			<Filter
+				Name="win32"
+				>
+				<File
+					RelativePath=".\Utility\win32\win32guid.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\Utility\win32\win32guid.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Memory"

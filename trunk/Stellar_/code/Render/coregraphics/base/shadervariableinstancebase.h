@@ -16,7 +16,7 @@
     (C) 2007 Radon Labs GmbH
 */
 #include "core/refcounted.h"
-#include "util/variant.h"
+#include "utility/variant.h"
 #include "coregraphics/texture.h"
 
 namespace CoreGraphics

@@ -33,12 +33,39 @@
 */
 #include "core/types.h"
 #include <vector>
+#include <algorithm>
 
 //------------------------------------------------------------------------------
 namespace Util
 {
 template<class TYPE> class Array : public std::vector<TYPE>
-{};
+{
+public:
+	/// find element
+	const_iterator Find(const TYPE& elm)const;
+	/// find element read/only
+	iterator Find(const TYPE& elm);
+};
+
+//------------------------------------------------------------------------------
+/**
+*/
+template<class TYPE>
+typename Array<TYPE>::const_iterator 
+Array<TYPE>::Find(const TYPE& elm)const
+{
+	return std::find(this->begin(), this->end(), elm);
+}
+
+//------------------------------------------------------------------------------
+/**
+*/
+template<class TYPE>
+typename Array<TYPE>::iterator 
+Array<TYPE>::Find(const TYPE& elm)
+{
+	return std::find(this->begin(), this->end(), elm);
+}
 
 //template<class TYPE> class Array
 //{
@@ -209,7 +236,7 @@ template<class TYPE> class Array : public std::vector<TYPE>
 //void
 //Array<TYPE>::Copy(const Array<TYPE>& src)
 //{
-//    n_assert(0 == this->elements);
+//    s_assert(0 == this->elements);
 //
 //    this->grow = src.grow;
 //    this->capacity = src.capacity;
@@ -340,7 +367,7 @@ template<class TYPE> class Array : public std::vector<TYPE>
 //void
 //Array<TYPE>::Grow()
 //{
-//    n_assert(this->grow > 0);
+//    s_assert(this->grow > 0);
 //    SizeT growToSize;
 //    if (0 == this->capacity)
 //    {
@@ -362,8 +389,8 @@ template<class TYPE> class Array : public std::vector<TYPE>
 //void
 //Array<TYPE>::Move(IndexT fromIndex, IndexT toIndex)
 //{
-//    n_assert(this->elements);
-//    n_assert(fromIndex < this->size);
+//    s_assert(this->elements);
+//    s_assert(fromIndex < this->size);
 //
 //    // nothing to move?
 //    if (fromIndex == toIndex)
@@ -428,7 +455,7 @@ template<class TYPE> class Array : public std::vector<TYPE>
 //    {
 //        this->Grow();
 //    }
-//    n_assert(this->elements);
+//    s_assert(this->elements);
 //    this->elements[this->size++] = elm;
 //}
 //
@@ -457,13 +484,13 @@ template<class TYPE> class Array : public std::vector<TYPE>
 //void
 //Array<TYPE>::Reserve(SizeT num)
 //{
-//    n_assert(num > 0);
+//    s_assert(num > 0);
 //    SizeT maxElement = this->size + num;
 //    while (maxElement >= this->capacity)
 //    {
 //        this->Grow();
 //    }
-//    n_assert(this->elements);
+//    s_assert(this->elements);
 //    this->size += num;
 //}
 //
@@ -481,7 +508,7 @@ template<class TYPE> class Array : public std::vector<TYPE>
 //        // grow array if necessary
 //        if (index >= this->capacity)
 //        {
-//            n_assert(this->grow > 0);
+//            s_assert(this->grow > 0);
 //            this->GrowTo(index + this->grow);
 //        }
 //        // update number of contained elements
@@ -543,7 +570,7 @@ template<class TYPE> class Array : public std::vector<TYPE>
 //TYPE&
 //Array<TYPE>::operator[](IndexT index) const
 //{
-//    n_assert(this->elements && (index < this->size));
+//    s_assert(this->elements && (index < this->size));
 //    return this->elements[index];
 //}
 //
@@ -594,7 +621,7 @@ template<class TYPE> class Array : public std::vector<TYPE>
 //TYPE&
 //Array<TYPE>::Front() const
 //{
-//    n_assert(this->elements && (this->size > 0));
+//    s_assert(this->elements && (this->size > 0));
 //    return this->elements[0];
 //}
 //
@@ -605,7 +632,7 @@ template<class TYPE> class Array : public std::vector<TYPE>
 //TYPE&
 //Array<TYPE>::Back() const
 //{
-//    n_assert(this->elements && (this->size > 0));
+//    s_assert(this->elements && (this->size > 0));
 //    return this->elements[this->size - 1];
 //}
 //
@@ -626,7 +653,7 @@ template<class TYPE> class Array : public std::vector<TYPE>
 //void
 //Array<TYPE>::EraseIndex(IndexT index)
 //{
-//    n_assert(this->elements && (index < this->size));
+//    s_assert(this->elements && (index < this->size));
 //    if (index == (this->size - 1))
 //    {
 //        // special case: last element
@@ -646,7 +673,7 @@ template<class TYPE> class Array : public std::vector<TYPE>
 //typename Array<TYPE>::Iterator
 //Array<TYPE>::Erase(typename Array<TYPE>::Iterator iter)
 //{
-//    n_assert(this->elements && (iter >= this->elements) && (iter < (this->elements + this->size)));
+//    s_assert(this->elements && (iter >= this->elements) && (iter < (this->elements + this->size)));
 //    this->EraseIndex(IndexT(iter - this->elements));
 //    return iter;
 //}
@@ -658,7 +685,7 @@ template<class TYPE> class Array : public std::vector<TYPE>
 //void
 //Array<TYPE>::Insert(IndexT index, const TYPE& elm)
 //{
-//    n_assert(index <= this->size);
+//    s_assert(index <= this->size);
 //    if (index == this->size)
 //    {
 //        // special case: append element to back

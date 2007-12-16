@@ -13,12 +13,12 @@
     (C) 2007 by ctuo
 */
 #include "core/refcounted.h"
-#include "util/atom.h"
-#include "util/string.h"
+//#include "utility/atom.h"
+#include "utility/string.h"
 #include "coregraphics/shadervariable.h"
 #include "coregraphics/shaderfeature.h"
 #include "coregraphics/shadervariation.h"
-#include "coregraphics/preshader.h"
+//#include "coregraphics/preshader.h"
 
 namespace CoreGraphics
 {
@@ -140,7 +140,7 @@ ShaderInstanceBase::HasVariableBySemantic(const CoreGraphics::ShaderVariable::Se
 inline SizeT
 ShaderInstanceBase::GetNumVariables() const
 {
-    return this->variables.Size();
+    return (SizeT)this->variables.size();
 }
 
 //------------------------------------------------------------------------------

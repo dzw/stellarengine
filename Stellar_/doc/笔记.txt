@@ -138,7 +138,7 @@ Renderer::DrawScene
         SetGlobalState
         SetWorldTransformation		从Draw参数传进一个Geometry，在这里更新世界矩阵，着色所需
 	EnableIBuffer			用Geometry设置索引缓冲
-	获得效果文件			Start,Quantity,效果文件从Start位置开始取Quantity个数量渲染
+	获得效果文件(数组)			Start,Quantity,效果文件从Start位置开始取Quantity个数量渲染
 	
 
 

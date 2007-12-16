@@ -27,10 +27,10 @@
 
     (C) 2007 Radon Labs GmbH
 */
-#include "util/string.h"
-#include "util/atom.h"
-#include "util/array.h"
-#include "util/dictionary.h"
+#include "utility/string.h"
+#include "utility/atom.h"
+#include "utility/array.h"
+#include "utility/dictionary.h"
 
 namespace Base
 {

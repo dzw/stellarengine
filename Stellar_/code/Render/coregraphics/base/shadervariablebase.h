@@ -13,7 +13,9 @@
     (C) 2006 Radon Labs GmbH
 */
 #include "core/refcounted.h"
-#include "util/atom.h"
+#include "utility/atom.h"
+#include "core/types.h"
+#include "math/float4.h"
 
 namespace CoreGraphics
 {

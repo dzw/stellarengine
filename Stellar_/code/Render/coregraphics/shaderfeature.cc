@@ -32,7 +32,7 @@ ShaderFeature::StringToMask(const String& str)
     // first split the string mask into tokens
     Array<String> tokens = str.Tokenize("\t |");
     IndexT tokenIndex;
-    for (tokenIndex = 0; tokenIndex < tokens.Size(); tokenIndex++)
+    for (tokenIndex = 0; tokenIndex < tokens.size(); tokenIndex++)
     {
         Name featureName = tokens[tokenIndex];
         if (this->stringToIndex.Contains(featureName))
@@ -50,7 +50,7 @@ ShaderFeature::StringToMask(const String& str)
                 return 0;
             }
             this->stringToIndex.Add(featureName, bitIndex);
-            this->indexToString.Append(featureName);
+            this->indexToString.push_back(featureName);
 
             // finally update the mask
             mask |= (1<<bitIndex);
@@ -75,11 +75,11 @@ ShaderFeature::MaskToString(Mask mask)
     {
         if (0 != (mask & (1<<bitIndex)))
         {
-            if (!str.IsEmpty())
+            if (!str.empty())
             {
-                str.Append("|");
+				str += "|";
             }
-            str.Append(this->indexToString[bitIndex].Value());
+            str += this->indexToString[bitIndex].Value();
         }
     }
     return str;

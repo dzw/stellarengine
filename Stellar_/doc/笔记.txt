@@ -107,7 +107,7 @@ Spatial
     m_pkParent		父指针
     m_kGlobalStates	全局渲染状态（数组）
     m_kLights		灯光状态（数组）
-    m_kEffects		特效状态（数组）
+    m_kEffects		特效状态（数组）  多次着色过程
 
 Geometry 继承自Spatial
     VertexBufferPtr	顶点缓冲
@@ -122,6 +122,24 @@ Geometry 继承自Spatial
 Node 继承自Spatial
     m_kChild
 
+
+
+GeomertyInstance
+    Geometry
+    vector<ShaderVariableInstance>	shader variable  instance 多个变量
+    vector<shader>			effect 多个shader
+    
+
+
+
+Renderer::DrawScene
+    循环处理所有可见对象
+    Draw(Geometry*)
+        SetGlobalState
+        SetWorldTransformation		从Draw参数传进一个Geometry，在这里更新世界矩阵，着色所需
+	EnableIBuffer			用Geometry设置索引缓冲
+	获得效果文件			Start,Quantity,效果文件从Start位置开始取Quantity个数量渲染
+	
 
 
 

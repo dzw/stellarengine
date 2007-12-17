@@ -66,7 +66,7 @@ protected:
 /**
 */
 template<class KEYTYPE, class VALUETYPE>
-Dictionary<KEYTYPE, VALUETYPE>::Dictionary() :
+Dictionary<KEYTYPE, VALUETYPE>::Dictionary()
 {
 	// empty
 }

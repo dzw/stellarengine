@@ -30,7 +30,7 @@ ShaderFeature::StringToMask(const String& str)
     Mask mask = 0;
 
     // first split the string mask into tokens
-    Array<String> tokens = str.Tokenize("\t |");
+    Array<String> tokens = Tokenize(str, "\t |");
     IndexT tokenIndex;
     for (tokenIndex = 0; tokenIndex < tokens.size(); tokenIndex++)
     {

@@ -25,7 +25,7 @@
     (C) 2006 RadonLabs GmbH
 */
 #include "core/types.h"
-//#include "utility/array.h"
+#include "utility/array.h"
 //#include "math/float4.h"
 //#include "math/matrix44.h"
 //#include "memory/heap.h"
@@ -33,7 +33,37 @@
 //------------------------------------------------------------------------------
 namespace Util
 {
-  typedef std::string String;
+typedef std::string String;
+//class String : public std::string
+//{
+//public:
+//	Array<String> String::Tokenize(const String& whiteSpace) const;
+//};
+
+//------------------------------------------------------------------------------
+/**
+Tokenize the string into a String array. 
+
+	@param  str				s source string 
+	@param  whiteSpace      a string containing the whitespace characters
+	@return                 a string array of tokens
+*/
+inline
+Array<String>
+Tokenize(const String& str, const String& whiteSpace) //const
+{
+  Array<String> tokens;
+  char* ptr = const_cast<char*>(str.c_str());
+  const char* token;
+  while (0 != (token = strtok(ptr, whiteSpace.c_str())))
+  {
+	  String ss = token;
+	  tokens.push_back(String(token));
+	  ptr = 0;
+  }
+  return tokens;
+}
+
 //
 //class String
 //{

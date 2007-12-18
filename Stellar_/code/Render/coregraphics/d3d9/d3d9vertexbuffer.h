@@ -34,6 +34,8 @@ public:
 	void Setup(const Util::Array<CoreGraphics::VertexComponent>& c);
 	/// get pointer to d3d9 vertex declaration
 	IDirect3DVertexDeclaration9* GetD3D9VertexDeclaration() const;
+	/// set source stream
+	void SetVertexBuffer();
 
 	/// get pointer to d3d9 vertex buffer object
 	IDirect3DVertexBuffer9* GetD3D9VertexBuffer() const;

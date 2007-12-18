@@ -128,10 +128,24 @@ D3D9VertexBuffer::Setup(const Util::Array<CoreGraphics::VertexComponent>& c)
 	decl[compIndex].Stream = 0xff;
 	decl[compIndex].Type = (WORD) D3DDECLTYPE_UNUSED;
 
-	//IDirect3DDevice9* d3d9Dev = D3D9RenderDevice::Instance()->GetDirect3DDevice();
-	//HRESULT hr = d3d9Dev->CreateVertexDeclaration(decl, &this->d3d9VertexDeclaration);
-	//s_assert(SUCCEEDED(hr));
+	IDirect3DDevice9* d3d9Dev = D3D9RenderDevice::Instance()->GetDirect3DDevice();
+	HRESULT hr = d3d9Dev->CreateVertexDeclaration(decl, &this->d3d9VertexDeclaration);
+	s_assert(SUCCEEDED(hr));
 	s_assert(0 != this->d3d9VertexDeclaration);
+}
+
+void 
+D3D9VertexBuffer::SetVertexBuffer()
+{
+	Base::VertexBufferBase::SetVertexBuffer();
+
+	IDirect3DDevice9* d3d9Dev = D3D9RenderDevice::Instance()->GetDirect3DDevice();
+	d3d9Dev->SetStreamSource(0, this->d3d9VertexBuffer, 0, vertexByteSize);
+	s_assert(SUCCEEDED(hr));
+
+	// set vertex declaration
+	hr = this->d3d9Dev->SetVertexDeclaration(this->d3d9VertexDeclaration);
+	s_assert(SUCCEEDED(hr));
 }
 
 } // namespace CoreGraphics

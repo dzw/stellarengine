@@ -40,6 +40,8 @@ public:
 	void Setup(const Util::Array<CoreGraphics::VertexComponent>& c);
 	/// get the vertex stride in number of bytes
 	SizeT GetVertexByteSize() const;
+	/// 渲染前设置顶点源
+	void SetVertexBuffer();
 protected:
 	/// set vertex layout (set by resource loader)
 	//void SetVertexLayout(const Ptr<CoreGraphics::VertexLayout>& vertexLayout);

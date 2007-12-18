@@ -90,4 +90,13 @@ VertexBufferBase::Setup(const Array<VertexComponent>& comps)
 	}
 }
 
+//------------------------------------------------------------------------------
+/**
+*/
+void 
+VertexBufferBase::SetVertexBuffer()
+{
+	// empty
+}
+
 } // namespace Base

@@ -189,6 +189,22 @@
 				>
 			</File>
 			<File
+				RelativePath=".\coregraphics\memoryindexbufferloader.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\memoryindexbufferloader.h"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\memoryvertexbufferloader.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\memoryvertexbufferloader.h"
+				>
+			</File>
+			<File
 				RelativePath=".\coregraphics\pixelformat.cc"
 				>
 			</File>
@@ -284,6 +300,22 @@
 					>
 				</File>
 				<File
+					RelativePath=".\coregraphics\base\memoryindexbufferloaderbase.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\base\memoryindexbufferloaderbase.h"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\base\memoryvertexbufferloaderbase.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\base\memoryvertexbufferloaderbase.h"
+					>
+				</File>
+				<File
 					RelativePath=".\coregraphics\base\shaderbase.cc"
 					>
 				</File>
@@ -349,6 +381,22 @@
 				</File>
 				<File
 					RelativePath=".\coregraphics\d3d9\d3d9indexbuffer.h"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\d3d9\d3d9memoryindexbufferloader.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\d3d9\d3d9memoryindexbufferloader.h"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\d3d9\d3d9memoryvertexbufferloader.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\d3d9\d3d9memoryvertexbufferloader.h"
 					>
 				</File>
 				<File

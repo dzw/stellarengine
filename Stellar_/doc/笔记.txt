@@ -1,3 +1,6 @@
+资源	加载	渲染	场景管理	多线程	
+================
+
 SharedResourceServer  资源共享
 
 
@@ -36,10 +39,42 @@ D3D9RenderDevice::BeginFrame
 		// apply shader variables
 
 		BeginBatch
-		RenderBatch				设置Technique,variable等，并渲染
+		RenderBatch				设置Technique,variable等，并循环渲染
+		  GetVisibleModels			获取可见对象
+		  GetVisibleModelNodes			为每个Model获取Nodes
+		  SetFeatureBits			设置technique
+		  ApplySharedState			应用着色变量的状态
+		  SelectActiveVariation			激活technique
+
+		  GetVisibleModelNodeInstances		获得可见对象的所有实例，循环渲染所有实例
+		  ApplyState				应用实例的着色变量
+		  Render				渲染实例
+
 		EndBatch
 	    D3D9RenderDevice::EndPass
 D3D9RenderDevice::EndFrame
+
+
+
+
+WM4渲染过程
+
+Polylines::OnIdle
+  Renderer::DrawScene		获得可见对象
+    Renderer::Draw		渲染
+      SetGlobalState		设置全局状态（固定管线）
+      EnableIBuffer		设置索引缓冲
+      循环应用所有的效果（如果有多个）
+      ApplyEffect		应用效果并渲染
+        SetGlobalState		为每个EffectShader设置渲染状态（固定管线）
+	EnableVProgram		顶点着色
+	EnablePProgram		像素着色
+	EnableTexture		设置纹理
+	EnableVBuffer		顶点缓冲(这里还要从Attributes获取FVF）
+	DrawElements		真正渲染
+	...
+
+
 
 
 
@@ -124,8 +159,10 @@ Node 继承自Spatial
 
 
 
-GeomertyInstance
-    Geometry
+GeometryInstance
+    PrimitiveGroup			记录渲染顶点的开始位置和数量等信息。
+    Geometry				具体数据
+    BoundingVolumePtr			子模型包围盒
     vector<ShaderVariableInstance>	shader variable  instance 多个变量
     vector<shader>			effect 多个shader
     
@@ -138,8 +175,23 @@ Renderer::DrawScene
         SetGlobalState
         SetWorldTransformation		从Draw参数传进一个Geometry，在这里更新世界矩阵，着色所需
 	EnableIBuffer			用Geometry设置索引缓冲
-	获得效果文件(数组)			Start,Quantity,效果文件从Start位置开始取Quantity个数量渲染
+	获得效果文件(数组)		Start,Quantity,效果文件从Start位置开始取Quantity个数量渲染
 	
 
 
+使用bsp：
+WM中BSP将空间分割成正、负和分割线三部份。
+怎么判断视截体在正面还是负面？Plane类有个成员函数WhichSide，判断输入的点是正边还是负边，Camera类
+有个成员函数WhichSide用于测试视截体的八个点在哪面，如果八个点都在正面，则返回正，如果八个点都在负
+面，则返回负面，如果有些在正面有些在负面，就返回0.
 
+
+The root of the BSP tree is a
+special node that helps determine in which leaf region the eye point is.
+
+BSP树的根节点是一个特殊的节点，它用于决定当前眼睛在哪个叶子范围。
+
+
+
+
+    

@@ -164,8 +164,12 @@ GeometryInstance
     Geometry				具体数据
     BoundingVolumePtr			子模型包围盒
     vector<ShaderVariableInstance>	shader variable  instance 多个变量
-    vector<shader>			effect 多个shader
+    vector<ShaderInstance>		effect 多个shader
+
+
     
+渲染状态设置方式：在引擎中不设置任何全局状态(WM4中有)，如果需要设置，在technique中设置，然后在ShaderInstance中选择不同的technique(通过ShaderFeature::Mask)，渲染前应用ShaderInstance，并将所有变量应用。 每个对象可以选择不同的technique,这样当使用不同的渲染状态时，可以建立多个technique。
+
 
 
 
@@ -192,6 +196,57 @@ special node that helps determine in which leaf region the eye point is.
 BSP树的根节点是一个特殊的节点，它用于决定当前眼睛在哪个叶子范围。
 
 
+wm4渲染时，如果有多个对象使用相同的EFFECT，将排好序，调用相应EFFECT的DRAW函数渲染，如在NODE设置一个EFFECT，将影响其下的所有子节点。
 
 
-    
+
+
+渲染状态管理：
+以下几个地方比较耗时，
+1、Vertex/Fragment Program模式和固定管线模式的切换（FF，Fixed Function Pipeline） 
+2、Vertex/Fragment Program本身程序的切换 
+3、改变Vertex/Fragment Program常量 
+4、纹理切换 
+5、顶点和索引缓存（Vertex & Index Buffers）切换 
+
+渲染状态分类：
+实际场景中，往往会出现这样的情况，一类对象其它渲染状态都一样，只是纹理和顶点、索引数据不同。
+所以按以下步骤渲染：
+1、将相同的渲染状态分成一组。
+2、将1中分好的组按纹理不同排序，相同纹理的一起渲染。
+
+多道渲染（Multipass Rendering）
+一些老的显卡或较复杂的效果需要多次渲染才能实现，渲染一次就是一个pass，如SHADOWMAP。
+不同的pass往往渲染状态和纹理都不同，而顶点、索引数据是一样的。
+这带来一个问题：是以对象为单位渲染，一次渲染一个对象的所有pass，然后渲染下一个对象；还是以pass为单位渲染，第一次渲染所有对象的第一个pass，第二次渲染所有对象的第二个pass。
+　　以对象为单位渲染，渲染一个对象的第一个pass后，马上紧接着渲染这个对象的第二个pass，而每个pass的顶点和索引数据是相同的，因此第一个pass将顶点和索引数据送入显卡后，显卡Cache中已经有了这个对象顶点和索引数据，后续pass不必重新将顶点和索引数据拷到显卡，因此速度会非常快。而问题是每个pass的渲染状态都不同，这使得实际上每次渲染都要设置新的渲染状态，会产生大量的多余渲染状态切换。
+
+　　以pass为单位渲染则正好相反，以Shader分组，相同Shader的对象一起渲染，可以只在这组开始时设置一次渲染状态，相比以对象为单位，大大减少了渲染状态切换。可是每次渲染的对象不同，因此每次都要将对象的顶点和索引数据拷贝到显卡，会消耗不少时间。
+
+
+我们选择以pass为单位渲染。
+
+
+
+N3的渲染状态全部使用FX文件实现，每个对象的EFFECT在.n2脚本文件中指定包括变量，总的渲染过程在.xml文件中定义，也就是将渲染按PASS分类，具体每个PASS下面使用每个对象的EFFECT。
+WM4渲染状态与Scene Graph结合，在SPATIAL中保存有对象EFFECT，如要实现特殊的效果需要建立一个类，在其中实现某种效果。
+
+结合以上两个引擎，渲染部份实现如下：
+渲染状态全部放到FX，代码中不需要设置任何GLOBAL STATE，为每个对象保存一个具体的实现EFFECT(ShaderInstance)。
+WM4的
+Render
+Scene Graph
+Effect		用于实现特殊效果，派生子类实现。在子类中使用ShaderInstance
+VisiableSet	可见性判断
+
+
+
+N3:ShaderInstance = WM4:ShaderEffect
+
+
+可见对象对多次渲染的判断。visiableSet
+
+
+
+
+

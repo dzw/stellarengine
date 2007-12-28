@@ -161,11 +161,39 @@
 			Name="coregraphics"
 			>
 			<File
+				RelativePath=".\coregraphics\adapter.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\adapter.h"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\adapterinfo.h"
+				>
+			</File>
+			<File
 				RelativePath=".\coregraphics\antialiasquality.cc"
 				>
 			</File>
 			<File
 				RelativePath=".\coregraphics\antialiasquality.h"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\config.h"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\displaydevice.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\displaydevice.h"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\displaymode.h"
 				>
 			</File>
 			<File
@@ -213,11 +241,23 @@
 				>
 			</File>
 			<File
+				RelativePath=".\coregraphics\primitivegroup.h"
+				>
+			</File>
+			<File
 				RelativePath=".\coregraphics\primitivetopology.cc"
 				>
 			</File>
 			<File
 				RelativePath=".\coregraphics\primitivetopology.h"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\renderdevice.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\renderdevice.h"
 				>
 			</File>
 			<File
@@ -245,6 +285,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\coregraphics\shaderserver.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\shaderserver.h"
+				>
+			</File>
+			<File
 				RelativePath=".\coregraphics\shadervariable.cc"
 				>
 			</File>
@@ -269,11 +317,27 @@
 				>
 			</File>
 			<File
+				RelativePath=".\coregraphics\streamshaderloader.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\streamshaderloader.h"
+				>
+			</File>
+			<File
 				RelativePath=".\coregraphics\texture.cc"
 				>
 			</File>
 			<File
 				RelativePath=".\coregraphics\texture.h"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\transformdevice.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\transformdevice.h"
 				>
 			</File>
 			<File
@@ -291,6 +355,14 @@
 			<Filter
 				Name="base"
 				>
+				<File
+					RelativePath=".\coregraphics\base\displaydevicebase.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\base\displaydevicebase.h"
+					>
+				</File>
 				<File
 					RelativePath=".\coregraphics\base\indexbufferbase.cc"
 					>
@@ -316,6 +388,14 @@
 					>
 				</File>
 				<File
+					RelativePath=".\coregraphics\base\renderdevicebase.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\base\renderdevicebase.h"
+					>
+				</File>
+				<File
 					RelativePath=".\coregraphics\base\shaderbase.cc"
 					>
 				</File>
@@ -329,6 +409,14 @@
 				</File>
 				<File
 					RelativePath=".\coregraphics\base\shaderinstancebase.h"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\base\shaderserverbase.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\base\shaderserverbase.h"
 					>
 				</File>
 				<File
@@ -364,6 +452,14 @@
 					>
 				</File>
 				<File
+					RelativePath=".\coregraphics\base\transformdevicebase.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\base\transformdevicebase.h"
+					>
+				</File>
+				<File
 					RelativePath=".\coregraphics\base\VertexBufferBase.cc"
 					>
 				</File>
@@ -375,6 +471,14 @@
 			<Filter
 				Name="d3d9"
 				>
+				<File
+					RelativePath=".\coregraphics\d3d9\d3d9displaydevice.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\d3d9\d3d9displaydevice.h"
+					>
+				</File>
 				<File
 					RelativePath=".\coregraphics\d3d9\d3d9indexbuffer.cc"
 					>
@@ -400,6 +504,14 @@
 					>
 				</File>
 				<File
+					RelativePath=".\coregraphics\d3d9\d3d9renderdevice.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\d3d9\d3d9renderdevice.h"
+					>
+				</File>
+				<File
 					RelativePath=".\coregraphics\d3d9\d3d9shader.cc"
 					>
 				</File>
@@ -416,6 +528,14 @@
 					>
 				</File>
 				<File
+					RelativePath=".\coregraphics\d3d9\d3d9shaderserver.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\d3d9\d3d9shaderserver.h"
+					>
+				</File>
+				<File
 					RelativePath=".\coregraphics\d3d9\d3d9shadervariable.cc"
 					>
 				</File>
@@ -429,6 +549,14 @@
 				</File>
 				<File
 					RelativePath=".\coregraphics\d3d9\d3d9shadervariation.h"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\d3d9\d3d9streamshaderloader.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\d3d9\d3d9streamshaderloader.h"
 					>
 				</File>
 				<File
@@ -449,6 +577,18 @@
 				</File>
 				<File
 					RelativePath=".\coregraphics\d3d9\d3d9vertexbuffer.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="win32"
+				>
+				<File
+					RelativePath=".\coregraphics\win32\win32displaydevice.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\win32\win32displaydevice.h"
 					>
 				</File>
 			</Filter>
@@ -474,6 +614,26 @@
 			</File>
 			<File
 				RelativePath=".\resources\resourceloader.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="apprender"
+			>
+			<File
+				RelativePath=".\apprender\renderapplication.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\apprender\renderapplication.h"
+				>
+			</File>
+			<File
+				RelativePath=".\apprender\viewerapplication.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\apprender\viewerapplication.h"
 				>
 			</File>
 		</Filter>

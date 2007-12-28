@@ -14,6 +14,9 @@
 /**
     configuration.
 */
+// STELLAR's main window class
+#define STELLAR_WINDOW_CLASS "STELLAR::MainWindow"
+
 #ifdef _DEBUG
 #define STELLAR_DEBUG (1)
 #endif
@@ -23,6 +26,10 @@
 #else
 #define STELLAR_MEMORY_STATS (0)
 #endif
+
+// enable/disable mini dumps
+#define STELLAR_ENABLE_MINIDUMPS (1)
+
 
 //------------------------------------------------------------------------------
 /**

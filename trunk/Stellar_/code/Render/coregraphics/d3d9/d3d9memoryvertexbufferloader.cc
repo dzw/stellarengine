@@ -3,7 +3,7 @@
 //  (C) 2007 Radon Labs GmbH
 //------------------------------------------------------------------------------
 #include "stdneb.h"
-#include "coregraphics/vertexlayoutserver.h"
+//#include "coregraphics/vertexlayoutserver.h"
 #include "coregraphics/d3d9/d3d9memoryvertexbufferloader.h"
 #include "coregraphics/d3d9/d3d9types.h"
 #include "coregraphics/d3d9/d3d9renderdevice.h"

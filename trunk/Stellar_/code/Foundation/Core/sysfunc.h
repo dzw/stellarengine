@@ -19,15 +19,6 @@ class SysFunc : public Win32::SysFunc
     // empty
 };
 } // namespace Core
-#elif __XBOX360__
-#include "core/xbox360/sysfunc.h"
-namespace Core
-{
-class SysFunc : public Xbox360::SysFunc
-{
-    // empty
-};
-} // namespace Core
 #else
 #error "Core::SysFunc not implemented on this platform!"
 #endif

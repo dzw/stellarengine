@@ -96,7 +96,7 @@ Dictionary<KEYTYPE, VALUETYPE>::operator=(const Dictionary<KEYTYPE, VALUETYPE>& 
 template<class KEYTYPE, class VALUETYPE> void
 Dictionary<KEYTYPE, VALUETYPE>::Clear()
 {
-	this->keyValuePairs.Clear();
+	this->keyValuePairs.clear();
 }
 
 //------------------------------------------------------------------------------

@@ -66,7 +66,7 @@ D3D9ShaderVariation::Setup(ID3DXEffect* effect, D3DXHANDLE handle)
     else
     {
         // issue a warning
-        n_warning("No Features annotation in technique '%s'!\n", this->GetName().Value().AsCharPtr());
+        s_warning("No Features annotation in technique '%s'!\n", this->GetName().Value().c_str());
     }
 }
 

@@ -31,12 +31,12 @@ ShaderInstanceBase::~ShaderInstanceBase()
 {
     // check if Discard() has been called...
     s_assert(!this->IsValid());
-    s_assert(this->variables.IsEmpty());
-    s_assert(this->variablesByName.IsEmpty());
-    s_assert(this->variablesBySemantic.IsEmpty());
-    s_assert(this->variations.IsEmpty());    
+    s_assert(this->variables.size() > 0);
+    s_assert(this->variablesByName.Size() > 0);
+    s_assert(this->variablesBySemantic.Size() > 0);
+    s_assert(this->variations.Size() > 0);    
     s_assert(!this->activeVariation.isvalid());
-    s_assert(this->preShaders.IsEmpty());
+    //s_assert(this->preShaders.IsEmpty());
 }
 
 //------------------------------------------------------------------------------
@@ -83,7 +83,7 @@ ShaderInstanceBase::Cleanup()
 {
     s_assert(this->IsValid());
     this->originalShader = 0;
-    this->variables.Clear();
+    this->variables.clear();
     this->variablesByName.Clear();
     this->variablesBySemantic.Clear();
     this->variations.Clear();
@@ -93,7 +93,7 @@ ShaderInstanceBase::Cleanup()
     {
         this->preShaders[i]->OnDetach();
     }*/
-    this->preShaders.Clear();
+    //this->preShaders.clear();
 }
 
 //------------------------------------------------------------------------------
@@ -184,7 +184,24 @@ ShaderInstanceBase::End()
 bool
 ShaderInstanceBase::SelectActiveVariation(CoreGraphics::ShaderFeature::Mask featureMask)
 {
-    IndexT i = this->variations.FindIndex(featureMask);
+	if (this->variations.Contains(featureMask))
+	{
+		const Ptr<ShaderVariation>& shdVar = this->variations[featureMask];
+		if (shdVar != this->activeVariation)
+		{
+			this->activeVariation = shdVar;
+			return true;
+		}
+	}
+	else
+	{
+		s_error("Unknown shader variation '%s' in shader '%s'\n",
+			ShaderServer::Instance()->FeatureMaskToString(featureMask).c_str(),
+			this->originalShader->GetResourceId().Value().c_str());
+	}
+	return false;
+
+    /*IndexT i = this->variations.FindIndex(featureMask);
     if (InvalidIndex != i)
     {
         const Ptr<ShaderVariation>& shdVar = this->variations.ValueAtIndex(i);
@@ -197,10 +214,10 @@ ShaderInstanceBase::SelectActiveVariation(CoreGraphics::ShaderFeature::Mask feat
     else
     {
         s_error("Unknown shader variation '%s' in shader '%s'\n",
-            ShaderServer::Instance()->FeatureMaskToString(featureMask).AsCharPtr(),
-            this->originalShader->GetResourceId().Value().AsCharPtr());
+            ShaderServer::Instance()->FeatureMaskToString(featureMask).c_str(),
+            this->originalShader->GetResourceId().Value().c_str());
     }
-    return false;
+    return false;*/
 }
 
 } // namespace Base

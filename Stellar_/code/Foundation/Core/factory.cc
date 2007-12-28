@@ -88,8 +88,8 @@ Factory::Register(const Rtti* rtti, const Util::String& className, const FourCC&
         // NOTE: can't use s_error() here, because Console is not setup yet
         // when this method Register() is called!
         /*String errorMsg;
-        errorMsg.Format("Class name '%s' has already been registered!", className.AsCharPtr());
-        SysFunc::Error(errorMsg.AsCharPtr());*/
+        errorMsg.Format("Class name '%s' has already been registered!", className.c_str());
+        SysFunc::Error(errorMsg.c_str());*/
         s_assert("Class name '%s' has already been registered!");
         return;
     }
@@ -101,9 +101,9 @@ Factory::Register(const Rtti* rtti, const Util::String& className, const FourCC&
         // when this method Register() is called!
         /*String errorMsg;
         errorMsg.Format("Class fourcc '%s' (name: %s) has already been registered!", 
-            classFourCC.AsString().AsCharPtr(),
-            className.AsCharPtr());
-        SysFunc::Error(errorMsg.AsCharPtr());*/
+            classFourCC.AsString().c_str(),
+            className.c_str());
+        SysFunc::Error(errorMsg.c_str());*/
         s_assert("Class fourcc '%s' (name: %s) has already been registered!");
         return;
     }
@@ -174,8 +174,8 @@ Factory::Create(const String& className) const
     if (!this->ClassExists(className))
     {
         /*String errorMsg;
-        errorMsg.Format("Factory::Create('%s'): unknown class name!", className.AsCharPtr());
-        SysFunc::Error(errorMsg.AsCharPtr());*/
+        errorMsg.Format("Factory::Create('%s'): unknown class name!", className.c_str());
+        SysFunc::Error(errorMsg.c_str());*/
         s_assert("Factory::Create('%s'): unknown class name!");
         return 0;
     }
@@ -200,8 +200,8 @@ Factory::Create(const FourCC classFourCC) const
     if (!this->ClassExists(classFourCC))
     {
         /*String errorMsg;
-        errorMsg.Format("Factory::Create('%s'): unknown class FourCC code!", classFourCC.AsString().AsCharPtr());
-        SysFunc::Error(errorMsg.AsCharPtr());*/
+        errorMsg.Format("Factory::Create('%s'): unknown class FourCC code!", classFourCC.AsString().c_str());
+        SysFunc::Error(errorMsg.c_str());*/
         s_assert("Factory::Create('%s'): unknown class FourCC code!");
         return 0;
     }

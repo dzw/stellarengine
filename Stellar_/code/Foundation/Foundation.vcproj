@@ -237,6 +237,14 @@
 					RelativePath=".\Core\Win32\precompiled.h"
 					>
 				</File>
+				<File
+					RelativePath=".\Core\Win32\sysfunc.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\Core\Win32\sysfunc.h"
+					>
+				</File>
 			</Filter>
 		</Filter>
 		<Filter
@@ -316,6 +324,14 @@
 			</File>
 			<File
 				RelativePath=".\Utility\blob.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Utility\cmdlineargs.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\Utility\cmdlineargs.h"
 				>
 			</File>
 			<File
@@ -531,6 +547,138 @@
 				</File>
 				<File
 					RelativePath=".\math\d3dx9\d3xd9_matrix44.cc"
+					>
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="app"
+			>
+			<File
+				RelativePath=".\app\application.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\app\application.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="system"
+			>
+			<File
+				RelativePath=".\system\appentry.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="debug"
+			>
+			<File
+				RelativePath=".\Debuging\minidump.h"
+				>
+			</File>
+			<Filter
+				Name="win32"
+				>
+				<File
+					RelativePath=".\Debuging\win32\win32minidump.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\Debuging\win32\win32minidump.h"
+					>
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="time"
+			>
+			<File
+				RelativePath=".\time\calendartime.h"
+				>
+			</File>
+			<File
+				RelativePath=".\time\time.h"
+				>
+			</File>
+			<File
+				RelativePath=".\time\timer.h"
+				>
+			</File>
+			<Filter
+				Name="win32"
+				>
+				<File
+					RelativePath=".\time\win32\win32calendartime.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\time\win32\win32calendartime.h"
+					>
+				</File>
+				<File
+					RelativePath=".\time\win32\win32timer.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\time\win32\win32timer.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="base"
+				>
+				<File
+					RelativePath=".\time\base\calendartimebase.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\time\base\calendartimebase.h"
+					>
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="io"
+			>
+			<File
+				RelativePath=".\IO\filestream.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\IO\filestream.h"
+				>
+			</File>
+			<File
+				RelativePath=".\IO\filetime.h"
+				>
+			</File>
+			<File
+				RelativePath=".\IO\fswrapper.h"
+				>
+			</File>
+			<File
+				RelativePath=".\IO\stream.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\IO\stream.h"
+				>
+			</File>
+			<Filter
+				Name="win32"
+				>
+				<File
+					RelativePath=".\IO\win32\win32filetime.h"
+					>
+				</File>
+				<File
+					RelativePath=".\IO\win32\win32fswrapper.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\IO\win32\win32fswrapper.h"
 					>
 				</File>
 			</Filter>

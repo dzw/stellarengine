@@ -54,6 +54,30 @@ D3D9RenderDevice::BeginFrame
 	    D3D9RenderDevice::EndPass
 D3D9RenderDevice::EndFrame
 
+根据不同的Technique分成不同的FrameBatch，一组一组渲染，用FramePass管理，每个FramePass有不同的RenderTarget，
+也就是说根据RenderTarget的不同分成不同的FramePass，而FramePass里面又根据不同的渲染Technique分成不同的FrameBatch。
+
+N3在XML中定义了FramePass，按FrameBatch直接顺序渲染可见的model，如果有多个FrameBatch，将会渲染多次，而没有判断哪个model是否需要用该FrameBatch？只是为每个实例可以设置不同的效果变量。
+
+
+每个FrameShader是一种渲染效果，比如阴影VSMShadowMapping，默认渲染效果DX9Default，每个XML中的FrameShader就是一个完整的效果，不能分开。也就是说FrameShader-FramePass-FrameBatch是一套的，不能使用其中某部份来渲染MODEL。
+N3中View中存放某种渲染效果，所有需要该种效果的MODEL需要ATTACH到该VIEW上，这样渲染时就可以有不同的效果。也就是说不同的渲染效果，ATTACH到不同的VIEW（view里面的State中）中。View已经集合了所有的效果，那具体某个对象使用不同的效果咋办？
+VisResolver类用于在每次渲染前将所有可见的MODEL找出来，解决每个MODEL使用不同的效果的方法是：在每种不同的渲染之前先遍历所有的MODEL，将需要使用该效果的MODEL找出，然后渲染。
+比如：渲染阴影，第一次渲染时先找出所有光，循环找出所有被光影响并可见的对象，加入列表，渲染的时候调用阴影的FrameShader(VSMShadowMapping)。渲好后，再使用默认的FrameShader(DX9Default)进行渲染。第二次渲染判断MODEL的是否有被光影响（LightingMode::SinglePass），如果有的将第一步渲染好的阴影rendertarget应用并渲染出来（ApplyModelEntityLights(),具体看算法）。
+
+
+
+我的想法：(错误，上面的才是正解)
+在XML文件中定义好有多少种FramePass，每种FramePass带有多个FrameBath，也就是说每个RenderTarget可以由多种technique效果组成，而每种technique被不同的model使用（在model中指定），用的时候顺序使用XML中定义的FramePass，判断当前可见的MODEL列表中是否有使用了该FramePass下的FrameBath，如果有就渲染。
+如普通的ShadowMap：在XML中定义两个FramePass，一张RenderTarget，每个FramePass中有一个FrameBatch，渲染的时候将需要设置阴影的MODEL加入第一个....(出错，无法解释)
+
+
+
+渲染设计：
+N3：View-ShadowMapServer-FrameShader
+view相当于空间可见性查找-ShaderMapServer相当于某种效果，默认有一种没有任何效果的Shader-FrameShader是效果的实现
+WM4：Spatial-Effect-FrameShader
+
 
 
 
@@ -245,7 +269,7 @@ N3:ShaderInstance = WM4:ShaderEffect
 
 
 可见对象对多次渲染的判断。visiableSet
-
+当Node有设置EFFECT，那么所有NODE的子节点可以使用相同的EFFECT.
 
 
 

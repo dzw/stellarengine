@@ -56,10 +56,15 @@ public:
 	Array<KEYTYPE> KeysAsArray() const;
 	/// get all values as array (slow)
 	Array<VALUETYPE> ValuesAsArray() const;
+	/// get map
+	std::map<KEYTYPE, VALUETYPE>& GetMap();
 
 protected:
 	std::map<KEYTYPE, VALUETYPE> keyValuePairs;
+
+public:
 	typedef std::map<KEYTYPE, VALUETYPE> itr_type;
+	typename std::map<KEYTYPE, VALUETYPE>::iterator Iterator;
 };
 
 //------------------------------------------------------------------------------
@@ -264,5 +269,16 @@ Dictionary<KEYTYPE, VALUETYPE>::KeysAsArray() const
 	}
 	return result;
 }
+
+//------------------------------------------------------------------------------
+/**
+*/
+template<class KEYTYPE, class VALUETYPE> 
+std::map<KEYTYPE, VALUETYPE>& 
+Dictionary<KEYTYPE, VALUETYPE>::GetMap()
+{
+	return this->keyValuePairs;
+}
+
 }
 #endif

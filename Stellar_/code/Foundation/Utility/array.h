@@ -45,6 +45,15 @@ public:
 	const_iterator Find(const TYPE& elm)const;
 	/// find element read/only
 	iterator Find(const TYPE& elm);
+
+	/// push element to back
+	void Append(const TYPE& elm);
+	/// get size
+	SizeT Size() const;
+	/// clear
+	void Clear();
+	/// is empty?
+	bool IsEmpty()const;
 };
 
 //------------------------------------------------------------------------------
@@ -65,6 +74,34 @@ typename Array<TYPE>::iterator
 Array<TYPE>::Find(const TYPE& elm)
 {
 	return std::find(this->begin(), this->end(), elm);
+}
+
+template<class TYPE>
+void 
+Array<TYPE>::Append(const TYPE& elm)
+{
+	this->push_back(elm);
+}
+
+template<class TYPE>
+SizeT 
+Array<TYPE>::Size() const
+{
+	return (SizeT)this->size();
+}
+
+template<class TYPE>
+void 
+Array<TYPE>::Clear()
+{
+	this->clear();
+}
+
+template<class TYPE>
+bool 
+Array<TYPE>::IsEmpty()const
+{
+	return this->empty();
 }
 
 //template<class TYPE> class Array

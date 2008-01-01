@@ -181,6 +181,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\coregraphics\batchtype.h"
+				>
+			</File>
+			<File
 				RelativePath=".\coregraphics\config.h"
 				>
 			</File>
@@ -258,6 +262,14 @@
 			</File>
 			<File
 				RelativePath=".\coregraphics\renderdevice.h"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\rendertarget.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\coregraphics\rendertarget.h"
 				>
 			</File>
 			<File
@@ -396,6 +408,14 @@
 					>
 				</File>
 				<File
+					RelativePath=".\coregraphics\base\rendertargetbase.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\base\rendertargetbase.h"
+					>
+				</File>
+				<File
 					RelativePath=".\coregraphics\base\shaderbase.cc"
 					>
 				</File>
@@ -509,6 +529,14 @@
 				</File>
 				<File
 					RelativePath=".\coregraphics\d3d9\d3d9renderdevice.h"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\d3d9\d3d9rendertarget.cc"
+					>
+				</File>
+				<File
+					RelativePath=".\coregraphics\d3d9\d3d9rendertarget.h"
 					>
 				</File>
 				<File
@@ -634,6 +662,74 @@
 			</File>
 			<File
 				RelativePath=".\apprender\viewerapplication.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="frame"
+			>
+			<File
+				RelativePath=".\frame\framebatch.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\framebatch.h"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\framepass.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\framepass.h"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\frameposteffect.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\frameposteffect.h"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\frameserver.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\frameserver.h"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\frameshader.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\frameshader.h"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\frameshaderloader.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\frameshaderloader.h"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\lightingmode.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\lightingmode.h"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\sortingmode.cc"
+				>
+			</File>
+			<File
+				RelativePath=".\frame\sortingmode.h"
 				>
 			</File>
 		</Filter>

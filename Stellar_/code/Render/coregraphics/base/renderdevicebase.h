@@ -51,9 +51,9 @@ public:
     /// return true if currently open
     bool IsOpen() const;
     /// attach a render event handler
-    void AttachEventHandler(const Ptr<CoreGraphics::RenderEventHandler>& h);
+    //void AttachEventHandler(const Ptr<CoreGraphics::RenderEventHandler>& h);
     /// remove a render event handler
-    void RemoveEventHandler(const Ptr<CoreGraphics::RenderEventHandler>& h);
+    //void RemoveEventHandler(const Ptr<CoreGraphics::RenderEventHandler>& h);
 
     /// get default render target
     const Ptr<CoreGraphics::RenderTarget>& GetDefaultRenderTarget() const;
@@ -93,9 +93,9 @@ public:
 
 protected:
     /// notify event handlers about an event
-    bool NotifyEventHandlers(const CoreGraphics::RenderEvent& e);
+    //bool NotifyEventHandlers(const CoreGraphics::RenderEvent& e);
     
-    Util::Array<Ptr<CoreGraphics::RenderEventHandler>> eventHandlers;
+    //Util::Array<Ptr<CoreGraphics::RenderEventHandler>> eventHandlers;
     Ptr<CoreGraphics::RenderTarget> defaultRenderTarget;
     Ptr<CoreGraphics::VertexBuffer> vertexBuffer;
     Ptr<CoreGraphics::IndexBuffer> indexBuffer;

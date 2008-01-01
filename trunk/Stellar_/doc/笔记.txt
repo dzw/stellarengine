@@ -76,9 +76,14 @@ VisResolverÀàÓÃÓÚÔÚÃ¿´ÎäÖÈ¾Ç°½«ËùÓÐ¿É¼ûµÄMODELÕÒ³öÀ´£¬½â¾öÃ¿¸öMODELÊ¹ÓÃ²»Í¬µÄÐ§¹
 äÖÈ¾Éè¼Æ£º
 N3£ºView-ShadowMapServer-FrameShader
 viewÏàµ±ÓÚ¿Õ¼ä¿É¼ûÐÔ²éÕÒ-ShaderMapServerÏàµ±ÓÚÄ³ÖÖÐ§¹û£¬Ä¬ÈÏÓÐÒ»ÖÖÃ»ÓÐÈÎºÎÐ§¹ûµÄShader-FrameShaderÊÇÐ§¹ûµÄÊµÏÖ
-WM4£ºSpatial-Effect-FrameShader
+
+Spatial-Effect-FrameShader
+Spatial¿Õ¼ä¹ÜÀí£¬EffectÏàµ±ÓÚShadowMapServer£¬Ö»²»¹ýEffectÊÇÄ¬ÈÏµÄÒ»¸öÐ§¹û£¬¿ÉÒÔ¼Ì³ÐËüÀ´ÊµÏÖ×Ô¼ºµÄÐ§¹û¡£FrameShaderÌá¹©¸øEffectÊµÏÖÐ§¹ûµÄ½Ó¿Ú¡£ÈçÊµÏÖSHADOWMAPÊ±£¬ÓÐ¸öShadowMapEffect¼Ì³Ð×ÔEffect£¬²¢ÔÚÀïÃæÊ¹ÓÃFrameShaderÊµÏÖÒõÓ°Ð§¹û¡£
 
 
+N3ÀïÃæ£¬Ä³¸ö¶ÔÏóÊ¹ÓÃÄ³ÖÖÐ§¹û²¢²»ÊÇµ¥¶ÀÉèÖÃµÄ£¬ÊÇ¸ù¾Ý¶ÔÏóÊÇ·ñÊÜ»·¾³Ó°Ïì×Ô¶¯Ê¹ÓÃÄ³ÖÖÐ§¹û¡£±ÈÈçÒõÓ°£¬Ö»¸ù¾Ý¶ÔÏóÊÇ·ñÊÜ¹âÕÕÓ°Ïì¡£
+
+ÎÒÃÇÒªÊµÏÖÔÚÄ³¸ö¶ÔÏóÉèÖÃÒ»¸öEFFECTÊôÐÔ£¬ÕâÑùÃ¿¸ö¶ÔÏó¶¼¿ÉÒÔÓÐ¸÷×ÔµÄÐ§¹û¡£¶øÇÒ¿ÉÒÔÓÐ¶à¸öEFFECT£¬ÊµÏÖ¶àÖÖÐ§¹û¡£äÖÈ¾Ê±½«ËùÓÐ¿É¼ûµÄ¶ÔÏó°´EFFECTÅÅÐò£¬½«ÏàÍ¬µÄÒ»ÆðäÖÈ¾¡£
 
 
 WM4äÖÈ¾¹ý³Ì

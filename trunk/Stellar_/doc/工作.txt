@@ -13,6 +13,8 @@
   灯光
   地形高光
 
+  Lod
+
 wmo 
   protal bsp
 

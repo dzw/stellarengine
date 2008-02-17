@@ -1,0 +1,28 @@
+需要处理的东西：
+
+地形
+  模型变换（位置、旋转、缩放）
+  所有资源的BOUNDBOX（变换后BOX也要跟着变换）
+  地图上有些小点空隙
+
+  静态阴影(lightmap)
+  加载多块地形（根据摄像机移动来加载需要的地块，释放不需要的地块）
+  地形四叉树管理
+    quadtree
+
+  灯光
+  地形高光
+
+wmo 
+  protal bsp
+
+m2 
+  动画 粒子系统
+
+其它
+  water
+  sky
+  fog
+  load system  
+    cpu->memory  memory->gpu
+  

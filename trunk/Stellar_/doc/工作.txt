@@ -30,6 +30,9 @@ m2
   index buffer 使用TRIANGLE STRIP，最后一个三角形使用退化（degenerate triangle）处理。
 
 
+
+计划: bsp portal loadsystem animation partical water sky fog 优化  WorldEditor ModelEditor ParticalEditor
+时间: 2008-2-22                                          2008-3-30                                      2008-5-30
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 floating-point precision errors 浮点精度问题

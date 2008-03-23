@@ -278,4 +278,19 @@ N3:ShaderInstance = WM4:ShaderEffect
 
 
 
+22:41 2008-3-22==========================N3动画部分笔记==========================================================
 
+CharacterNode
+	AnimClip								动画索引，每个动画都有一个实例
+	ManagedAnimation				动画数据(加载nax2文件)
+	Char::Character					处理一个动画所需的所有数据
+		Char::nCharSkeleton		保存所有的骨骼
+		
+	
+SkinShapeNode
+	Char::CharFragment			分批处理骨骼,每个fragment对应模型的一个primGrpIndex
+	Char::CharJointPalette	按fragment设置骨骼，即每个Fragment的骨骼集合
+	
+	
+	
+一个N2动画模型里面只有一个CharacterNode(保存动画数据)，有多个SkinShapeNode(保存每个Group和骨骼数据)

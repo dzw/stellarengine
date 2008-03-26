@@ -285,7 +285,7 @@ CharacterNode
 	ManagedAnimation				动画数据(加载nax2文件)
 	Char::Character					处理一个动画所需的所有数据
 		Char::nCharSkeleton		保存所有的骨骼
-		
+	Char::CharacterSet			与character联合进行查询和操作数据
 	
 SkinShapeNode
 	Char::CharFragment			分批处理骨骼,每个fragment对应模型的一个primGrpIndex

@@ -294,3 +294,26 @@ SkinShapeNode
 	
 	
 一个N2动画模型里面只有一个CharacterNode(保存动画数据)，有多个SkinShapeNode(保存每个Group和骨骼数据)
+
+
+nebula3中的动画系统是根据两个动画的权重进行插值混合的，每次进行运算的时候取得当前的权重，然后和动画的第一帧相乘，得到当前的动画，
+这样有个好处理，如：
+走路动画：BoneA -> BoneB
+跑步动画：BoneC -> BoneD
+现在正在播走路动画，放到一半，要切换动画，可以将BoneC做为目标与A进行混合，形成动画过渡！！！
+
+
+
+animation state 就是动画,如walk,run...
+An animation state is a collection of clips, and an animation clip is an animation with a specific blend value.
+
+
+
+One nAnimation object points to the data of exactly one "animation group" in an animation file (an animation group is a collection of curves that share the same attributes (number of keys, frame rate and looping type). Several nAnimation objects may access one animation file (since one animation file may contain several animation groups).
+一个nAnimation对象指出动画文件中的“动画组”数据，一个动画组就是动画曲线的集合，它们共享属性（关键帧数、帧率和循环类型）。几个nAnimation可能共享同一个动画文件（一个动画文件可能包函几组动画）.
+animation
+	curves(包含一些关键帧数、帧率、循环类型)
+	
+	
+
+

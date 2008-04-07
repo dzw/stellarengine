@@ -315,5 +315,10 @@ animation
 	curves(包含一些关键帧数、帧率、循环类型)
 	
 	
-
-
+CharacterNode	M2CharacterNode
+nCharacter	重新创建
+nCharSkeleton	不变
+nCharJoint	= Bone
+nClipAnim	不变
+nClipSchduler	不变
+SetJoint()

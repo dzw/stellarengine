@@ -1,3 +1,11 @@
+lod
+camera
+fps
+adtread的时候new新的内存，这块需要改掉。目前主线程还是很卡。
+
+
+
+
 M2
 换装
 max插件

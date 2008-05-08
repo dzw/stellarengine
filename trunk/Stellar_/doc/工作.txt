@@ -1,7 +1,8 @@
 lod
 camera
 fps
-adtread的时候new新的内存，这块需要改掉。目前主线程还是很卡。
+
+adtread的时候new新的内存，这块需要改掉。目前主线程还是很卡。terrainchunkentity放到WorldManager中实现。
 
 
 

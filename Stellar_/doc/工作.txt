@@ -1,3 +1,6 @@
+2:24 2008-5-28
+尝试将资源管理中用的Directory改成HashTable.以提高效率。
+发现用Atom<String>做为ResourceId非常慢，因为每次资源增加的时候都需要排序，对字符串进行strcmp，这个函数非常慢，特别是调用次数过多的时候。
 2:23 2008-5-26
 两处可能引起卡的问题：
 1、在Stage中更新所有entity，一旦enttiy很多的情况下，每个entity都要创建instance，会很慢，

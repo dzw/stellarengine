@@ -1,3 +1,9 @@
+2:20 2008-5-29
+资源管理中替换成HashTable，效率有所提升，不过数量多的时候还是非常卡。
+尝试用std::map
+
+测试具体在哪个位置卡。(可以肯定是在CreateManagedResource里面某处)
+
 2:24 2008-5-28
 尝试将资源管理中用的Directory改成HashTable.以提高效率。
 发现用Atom<String>做为ResourceId非常慢，因为每次资源增加的时候都需要排序，对字符串进行strcmp，这个函数非常慢，特别是调用次数过多的时候。

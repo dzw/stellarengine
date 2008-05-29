@@ -1,3 +1,10 @@
+2:57 2008-5-30
+把ResourceManager和SimaplerResourceMapper整合在一起了，用同一个资源HashTable，这样创建和查找的时候就只有一份数据，避免浪费。
+速度有所提升，今天没怎么测试到低ResourceManager哪块卡。
+
+hasttable类中还有个BUG，没时间了，下次解决。
+目标是DEBUG版只加载地形要达到100帧以上，加载还要流畅！！！
+
 2:20 2008-5-29
 资源管理中替换成HashTable，效率有所提升，不过数量多的时候还是非常卡。
 尝试用std::map

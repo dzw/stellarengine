@@ -1,3 +1,21 @@
+0:03 2008-6-10
+昨天将ResourceManager、SimplerResourceMapper、ShareResourceManager三块用stl::hashmap代替了原来的Directory。
+加载模块已经达到常量级，已基本实现不卡。
+
+接下来的工作：
+1、地形正常浏览，目前地形加载模块设计不理想，加载模块可以尝试用原来的方法（而不是使用发消息去加载，待定！）。
+2、四叉树，场景更新和渲染目前只有十几帧。
+3、天空
+4、水
+5、模型：静态、动态
+6、八叉树
+7、WMO
+8、粒子
+9、特效：广告牌、HDR、BLOOM、等等
+10、地形编辑器
+11、模型编辑器
+...
+
 2:57 2008-5-30
 把ResourceManager和SimaplerResourceMapper整合在一起了，用同一个资源HashTable，这样创建和查找的时候就只有一份数据，避免浪费。
 速度有所提升，今天没怎么测试到低ResourceManager哪块卡。

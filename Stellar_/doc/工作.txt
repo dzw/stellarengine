@@ -1,3 +1,14 @@
+1:26 2008-6-11
+这边的工作先放一下，目前不适合做大型RPG游戏开发，先做个休闲格斗游戏，从今天开始，做Fighter 3D游戏。
+
+工作安排如下：
+修改目前NEBULA中出现的问题（如释放出错等）
+熟悉并搭建NEBULA3应用层，开始做游戏。
+加载一张ground模型做为地形，休闲游戏场景不会太大，所以只用一个模块搞定。
+实现角色动画，格斗效果。
+实现粒子和魔法效果。
+
+
 0:03 2008-6-10
 昨天将ResourceManager、SimplerResourceMapper、ShareResourceManager三块用stl::hashmap代替了原来的Directory。
 加载模块已经达到常量级，已基本实现不卡。

@@ -1,3 +1,9 @@
+2:36 2008-7-25
+内存管理，unreal3上有个FMallocWindows分配内存以及FStackMask用于临时变量分配，与TORQUE里面的DataChunk和FramerAllocator相似，看看哪个效率高，拿来使用。
+另外，还要再加一个Memory pool固定大小内存的管理。
+
+unreal3里面的Array、map可以拿过来用，效率应该不错，当然要与stl比较一下。
+
 22:38 2008-7-15
 昨天的设想不用，直接把整个ADT文件流保存在TerrainTile中，每个chunk初化的时候只保存相对流中数据位置的指针（初始化时读取位置和BOX然后保存CHUNK偏移指针，别的什么都不干!!），当地图块可见的时候读取相应的数据。释放tile的时候删除占用的空间。
 

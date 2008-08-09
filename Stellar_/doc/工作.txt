@@ -1,3 +1,14 @@
+17:31 2008-8-9
+KOK地形模块渲染：
+分两块实现：1、数据块。2、渲染块。
+分别用Terrain和TerrainInstance做相应的功能。
+Terrain负责数据加载，解析，保存数据和所有district。
+TerrainInstance负责渲染，更新meshpool，填充顶点等。
+
+设定：渲染主角所在范围3*3大小的DISTRICT，TerrainInstance中创建3*3个DistrictNodeInstance，主角移动时，实时更新这3*3个DistrictNodeInstance，而数据缓冲加载4*4个DISTRICT，但是，在主角移出范围时并不释放DISTRICT数据，而是一直保存着，直到切换地图，因为地图是限制的32*32个DISTRICT，所以不需要实时释放，这样当主角移回来的时候不需要再加载数据，可以提高效率。
+
+
+
 15:13 2008-8-8
 加载的DISTRICT可以不释放，反正最多32*32个DISTRICT，如果不释放，以后用的时候就不用再创建。
 

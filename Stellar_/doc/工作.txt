@@ -1,3 +1,19 @@
+10:35 2008-9-10
+类型为TYPE_REPEAT的thing子模型在创建NODE时不需要为每个子模型都创建MESH，因为使用的时候就用到一个，类似的情况可能也出现在其它几种类型中。
+
+21:21 2008-9-9
+thing子模型类型：
+	TYPE_NORMAL				一般的模型
+	TYPE_HD,            // "m_hd"		子模型是地板，人可以行走上去
+	TYPE_LIGHT,         // "m_light"
+	TYPE_REPEAT,        // "m_repeat"	模型中包含多个子模型，其中只有一个需要显示。
+	TYPE_SELECT,        // "m_select"	选择时做碰撞用的，可能是个简化的模型，先用boundingbox判断，再做面判断。
+	TYPE_WATER,         // "m_water"
+	TYPE_EFF,           // "e_ff"		也是舊的規格，綁特效用
+	TYPE_EFLAME,        // "e_flame"	舊的規格，做路燈光片用( billboard )
+
+TYPE_NORMAL,TYPE_HD,TYPE_REPEAT是参与渲染的子模型，其它模型不渲染，所以不需要创建nodeInstance，直接从node中取得信息处理。
+
 23:42 2008-9-8
 材质系统设计：
 

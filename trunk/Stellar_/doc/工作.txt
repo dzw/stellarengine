@@ -1,3 +1,21 @@
+11:44 2008-9-12
+粒子系统设计：
+Particle		代表一个粒子数据	类似cPartilce
+ParticleEmitter		粒子发射器		管理粒子，类似cParticleEffectBase
+ParticleServer		发射器管理		类似c3dsMaxParticleManager
+ParticleNode		存放粒子数据		保存c3dsMaxEmitDataBase读进来的数据
+ParticleNodeInstance	渲染粒子		调用ParticleEmitter渲染
+
+
+11:23 2008-9-12
+***优化点：可以增加对多流的支持
+
+10:37 2008-9-12
+以后可以增加支持固定管线，通过设置frame.xml，根据情况使用哪种effect.
+
+16:19 2008-9-11
+***优化点：所有地物都是打开alphaTest的，非常浪费！
+
 10:35 2008-9-10
 类型为TYPE_REPEAT的thing子模型在创建NODE时不需要为每个子模型都创建MESH，因为使用的时候就用到一个，类似的情况可能也出现在其它几种类型中。
 

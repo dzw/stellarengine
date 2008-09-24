@@ -1,3 +1,42 @@
+20:18 2008-9-24
+游戏制作的一些想法：
+KOK现在的设计就是从魔兽争霸中来的，而魔兽争霸本身设计就不是做大世界或真实世界，而是做一个类似于想象的空间，所以地形比较小，人物也按一定比例在里面行动，感觉比较厚实，可以看到很多的物件和怪，任何设计都是基于此做的（有些像在做玩具），地形、怪、人都是这样，而魔兽世界的设计是基于世界的，在世界里面不太可能像前者那样可以看世界的很多东西。这就是玩具地图和真实地图的差别。
+
+所以做设计首先要清楚哪些是有利的，怎么利用起来，才能做出最好的东西，而不是看人家好就做的和别人一样，这样只会越做越差！！！
+
+
+23:10 2008-9-22
+***优化点：effect可以定义一些宏，使用的时候动态设置是否打开这些宏，从而产生不同的需求。参考speedtree.fx的宏定义及使用。
+
+14:08 2008-9-22
+***优化点：模型渲染排序优化：
+Model-node-batch
+按模型-子模型-批次排序。
+即：画子模型的时候再根据批次（也就是材质）再排序，因为现在已经按子模型排序了，只要在画子模型(Node)实例的时候再按批次排即可。
+这个方法只是对相同模型的多个实例排序，并不是对不同模型做排序。
+伪代码：
+for (int modelIndex = 0; modelIndex < model.Size(); modelIndex++)
+{
+  const Array<Ptr<ModelNode>>& nodes = model[modelIndex]->GetModelNodes();
+  for (int nodeIndex = 0; nodeIndex < nodes.Size(); nodeIndex++)
+  {
+    nodes[nodeIndex]->SetStreamSource(); // 设置VB,IB
+    int batchNum = nodes[nodeIndex]->GetBatchNum();
+
+    const Array<Ptr<ModeNodeInstance>>& nodeInsts = nodes[nodeIndex]->GetNodeInstances();
+    for( int b = 0; b < batchNum; b++)
+    {
+      for( int instIndex = 0; instIndex < nodeInsts.Size(); instIndex++)
+      {
+        render(b);	// 画某个批次
+      }
+    }
+  }
+}
+
+18:41 2008-9-20
+shader状态管理需要重新整理，目前这套存在效率问题，如把状态值存到attr，每次渲染前要从这里取，速度很慢。
+
 18:24 2008-9-20
 目前地物和粒子的渲染时把纹理动画都放在一块，也就是说不管有没有纹理动画，都需要处理，这里需要优化一下。
 
